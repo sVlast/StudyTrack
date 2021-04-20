@@ -23,8 +23,12 @@ const LogInModal = () => {
             <Button type="primary" onClick={showModal}>
                 Log In
       </Button>
-            <Modal title="Welcome to StudyTrack" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+            <Modal title=" " visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+                <img src="/images/ST_Logo.png"></img>
+                <p>Welcome to StudyTrack</p>
+                <p>Log in</p>
                 <HorizontalLoginForm/>
+                <a href="#" className="forgot-pass">Forgot password?</a>
             </Modal>
         </>
     );

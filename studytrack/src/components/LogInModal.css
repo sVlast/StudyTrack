@@ -1,19 +1,49 @@
 .ant-modal{
     text-decoration: none;
-    max-width: max-content;
+    width: 100%;
+    
     }
 .ant-modal-content{
     max-width: 1240px;
+    min-width: 580px ;
     background-color: #1890FF;
-    height: 500px;
+    height: 700px;
     border-radius: 20px;
+    
 }
 
 .ant-modal-header{
     text-align: center;
     border-radius: 20px 20px 0 0;
+    border: none;
 }
 
 .ant-modal-body{
     background-color: #fff;
+    text-align: center;
+    
+}
+.ant-modal-body img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.ant-modal-body p{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 22px;
+}
+
+.ant-modal-body p:last-of-type{
+    margin: 80px 0 30px;
+    padding: 0;
+}
+
+a.forgot-pass{
+    color: #BFBFBF;
+    margin-top: 20px;
+    display: inline-block;
 }
