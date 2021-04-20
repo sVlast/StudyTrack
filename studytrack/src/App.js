@@ -7,13 +7,13 @@ import 'antd/dist/antd.css';
 
 
 import FormTest from "./components/FormTest";
+import LogInModal from "./components/LogInModal.js";
 
 function App() {
   return (
     <>
-      <FormTest/>
+      <LogInModal/>
       
-      <HorizontalLoginForm/>
     </>
   );
 }

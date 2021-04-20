@@ -1,0 +1,18 @@
+.ant-modal{
+    text-decoration: none;
+    }
+.ant-modal-content{
+    max-width: 1240px;
+    background-color: #1890FF;
+    height: 500px;
+    border-radius: 20px;
+}
+
+.ant-modal-header{
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+}
+
+.ant-modal-body{
+    background-color: #fff;
+}
