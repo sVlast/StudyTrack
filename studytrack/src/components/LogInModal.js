@@ -24,6 +24,8 @@ const LogInModal = () => {
                 Log In
       </Button>
             <Modal title="Welcome to StudyTrack" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+                <img src="/images/ST_Logo.png"></img>
+                <p>Welcome to StudyTrack</p>
                 <HorizontalLoginForm/>
             </Modal>
         </>
