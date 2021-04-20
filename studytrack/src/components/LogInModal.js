@@ -4,30 +4,24 @@ import HorizontalLoginForm from './AntForm';
 import './LogInModal.css';
 
 const LogInModal = () => {
-    const [isModalVisible, setIsModalVisible] = useState(false);
-
-    const showModal = () => {
-        setIsModalVisible(true);
-    };
-
-    const handleOk = () => {
-        setIsModalVisible(false);
-    };
-
-    const handleCancel = () => {
-        setIsModalVisible(false);
-    };
-
+    const [visible, setVisible] = useState(false);
     return (
         <>
-            <Button type="primary" onClick={showModal}>
-                Log In
+            <Button type="primary" onClick={() => setVisible(true)}>
+                Log in
       </Button>
-            <Modal title=" " visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+            <Modal
+                title=" "
+                centered
+                visible={visible}
+                onOk={() => setVisible(false)}
+                onCancel={() => setVisible(false)}
+                width={1000}
+            >
                 <img src="/images/ST_Logo.png"></img>
                 <p>Welcome to StudyTrack</p>
                 <p>Log in</p>
-                <HorizontalLoginForm/>
+                <HorizontalLoginForm className='modal-login-form'/>
                 <a href="#" className="forgot-pass">Forgot password?</a>
             </Modal>
         </>
