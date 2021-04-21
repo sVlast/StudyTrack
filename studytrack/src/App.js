@@ -7,8 +7,9 @@ import 'firebase/auth';
 
 import './App.css';
 import 'antd/dist/antd.css';
+let database = firebase.database();
 
-//import FormTest from "./components/FormTest";
+
 import LogInModal from "./components/LogInModal.js";
 
 function App() {
@@ -19,5 +20,7 @@ function App() {
     </>
   );
 }
+
+console.log(firebase);
 
 export default App;
