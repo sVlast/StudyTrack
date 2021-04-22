@@ -9,6 +9,7 @@ import 'firebase/auth';
 import './App.css';
 import 'antd/dist/antd.css';
 import RegistrationForm from "./components/AntRegForm.js";
+import RegisterModal from "./components/RegisterModal.js";
 //let database = firebase.database();
 
 
@@ -16,7 +17,7 @@ function App() {
   return (
     <>
       <LogInModal/>
-      
+      <RegisterModal/>
     </>
   );
 }
