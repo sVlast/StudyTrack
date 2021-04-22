@@ -18,7 +18,7 @@ const LogInModal = () => {
                 onCancel={() => setVisible(false)}
                 width={1000}
             >
-                <img src="/images/ST_Logo.png"></img>
+                <img src="/images/ST_Logo.png" alt="logo"></img>
                 <p>Welcome to StudyTrack</p>
                 <p>Log in</p>
                 <HorizontalLoginForm className='modal-login-form'/>
