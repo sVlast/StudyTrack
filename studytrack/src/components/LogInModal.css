@@ -51,12 +51,17 @@ a.forgot-pass{
 .ant-modal form{
     margin:0 auto;
 }
-/* .ant-modal-footer{
-    width: min-content;
+.ant-modal-footer{
+    width: max-content;
     margin: 0 auto;
-    border: none;
-} */
-/* .ant-modal-footer button{
+    border: none !important;
+    color: #fff;
+}
+.ant-modal-footer p{
+    margin-top: 40px;
+}
+.ant-modal-footer button{
     display: flex;
     justify-content: center;
-} */
+    margin: 0 auto;
+}

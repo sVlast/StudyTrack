@@ -17,7 +17,10 @@ const LogInModal = () => {
                 onOk={() => setVisible(false)}
                 onCancel={() => setVisible(false)}
                 width={1000}
-                footer={null}
+                footer={[
+                    <p>Don't have an account?</p>,
+                    <Button type="normal">Register</Button>
+                ]}
             >
                 <img src="/images/ST_Logo.png" alt="logo"></img>
                 <p>Welcome to StudyTrack</p>
