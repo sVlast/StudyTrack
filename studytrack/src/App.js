@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <LogInModal/>
-      <img src="/images/Miki.gif"></img>
+      
     </>
   );
 }
