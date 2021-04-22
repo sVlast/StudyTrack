@@ -12,6 +12,10 @@ import 'antd/dist/antd.css';
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a06a2c65cbaf2946429c7e959905bdcf25617164
 
 function App() {
   return (
