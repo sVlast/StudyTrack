@@ -4,23 +4,23 @@
     
     }
 .ant-modal-content{
-    max-width: 1240px;
     min-width: 580px ;
-    background-color: #1890FF;
+    background-color: #1890FF !important;
     height: 700px;
-    border-radius: 20px;
+    border-radius: 20px !important;
     
 }
 
 .ant-modal-header{
     text-align: center;
-    border-radius: 20px 20px 0 0;
-    border: none;
+    border-radius: 20px 20px 0 0 !important;
+    border: none !important;
 }
 
 .ant-modal-body{
     background-color: #fff;
     text-align: center;
+    
     
 }
 .ant-modal-body img{
@@ -51,12 +51,12 @@ a.forgot-pass{
 .ant-modal form{
     margin:0 auto;
 }
-.ant-modal-footer{
+/* .ant-modal-footer{
     width: min-content;
     margin: 0 auto;
     border: none;
-}
-.ant-modal-footer button{
+} */
+/* .ant-modal-footer button{
     display: flex;
     justify-content: center;
-}
+} */
