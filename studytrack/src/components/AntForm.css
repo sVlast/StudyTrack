@@ -1,7 +1,5 @@
-form{
-    height: 1em;
-    width: max-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#horizontal_login.ant-form-inline{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
 }

@@ -3,7 +3,7 @@
     width: 100%;
     
     }
-.ant-modal-content{
+.ant-modal-body{
     min-width: 580px ;
     background-color: #1890FF !important;
     height: 700px;

@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import styled from 'styled-components';
 import './AntForm.css';
 
 const HorizontalLoginForm = () => {
   const [form] = Form.useForm();
   const [, forceUpdate] = useState({}); // To disable submit button at the beginning.
-
+  const StyledForm = styled(Form)`
+  .ant-form-inline{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+`;
   useEffect(() => {
     forceUpdate({});
   }, []);
@@ -16,7 +23,7 @@ const HorizontalLoginForm = () => {
   };
 
   return (
-    <Form form={form} name="horizontal_login" layout="inline" onFinish={onFinish}>
+    <StyledForm form={form} name="horizontal_login" layout="inline" alignment="center-align" onFinish={onFinish}>
       <Form.Item
         name="username"
         rules={[
@@ -57,7 +64,7 @@ const HorizontalLoginForm = () => {
           </Button>
         )}
       </Form.Item>
-    </Form>
+    </StyledForm>
   );
 };
 
