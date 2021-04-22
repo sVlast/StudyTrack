@@ -8,6 +8,7 @@ import 'firebase/auth';
 
 import './App.css';
 import 'antd/dist/antd.css';
+import RegistrationForm from "./components/AntRegForm.js";
 //let database = firebase.database();
 
 
