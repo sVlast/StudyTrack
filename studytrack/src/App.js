@@ -1,25 +1,25 @@
-//import ReactDOM from 'react-dom';
-//import React, { useState } from 'react';
-//import HorizontalLoginForm from "./components/AntForm.js";
 import LogInModal from "./components/LogInModal.js";
 
-import firebase from 'firebase/app';
+import firebase from './util/firebase';
 import 'firebase/auth';
 
 import './App.css';
 import 'antd/dist/antd.css';
-//let database = firebase.database();
+import Basicform from "./components/Basicform";
 
 
 function App() {
   return (
     <>
-      <LogInModal/>
-      
+      <LogInModal />
+      <div>
+        <h1>test</h1>
+        <Basicform />
+      </div>
     </>
   );
 }
 
-console.log(firebase);
+console.log("loging", firebase);
 
 export default App;
