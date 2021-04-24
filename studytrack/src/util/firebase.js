@@ -2,7 +2,8 @@ import firebase from 'firebase';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCVxLv_Oc-RXVgRItyChPGTX8oRsKM_bQc",
-  authDomain: "studytrack-ae509-default-rtdb.europe-west1.firebasedatabase.app", 
+  authDomain: "studytrack-ae509.firebaseapp.com",
+  databaseURL: "https://studytrack-ae509-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "studytrack-ae509",
   storageBucket: "studytrack-ae509.appspot.com",
   messagingSenderId: "1021595153306",
