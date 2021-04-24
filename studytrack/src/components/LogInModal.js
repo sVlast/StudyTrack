@@ -96,13 +96,8 @@ const LogInModal = () => {
                 <p>Welcome to StudyTrack</p>
                 <p>Log in</p>
                 <HorizontalLoginForm className='modal-login-form'/>
-<<<<<<< HEAD
-                <a href="/" className="forgot-pass">Forgot password?</a>
-            </Modal>
-=======
                 <a href="#" className="forgot-pass">Forgot password?</a>
             </StyledModal>
->>>>>>> frontend
         </>
     );
 };
