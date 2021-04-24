@@ -1,4 +1,4 @@
-#horizontal_login.ant-form-inline{
+.ant-form-inline{
     display:flex;
     flex-wrap: wrap;
     justify-content:center;

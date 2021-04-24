@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Form, Input, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
 import './AntRegForm.css';
+import styled from 'styled-components';
+
 const { Option } = Select;
 
 const formItemLayout = {
@@ -9,7 +11,7 @@ const formItemLayout = {
             span: 24,
         },
         sm: {
-            span: 8,
+            span: 24,
         },
     },
     wrapperCol: {
@@ -17,7 +19,7 @@ const formItemLayout = {
             span: 24,
         },
         sm: {
-            span: 16,
+            span: 24,
         },
     },
 };
@@ -28,8 +30,21 @@ const tailFormItemLayout = {
             offset: 0,
         },
         sm: {
-            span: 16,
-            offset: 8,
+            span: 24,
+            
+        },
+    },
+};
+const btnFormItemLayout = {
+    wrapperCol: {
+        xs: {
+            span: 24,
+            offset: 0,
+        },
+        sm: {
+            span: 24,
+            offset:8,
+
         },
     },
 };
@@ -38,17 +53,31 @@ const RegistrationForm = () => {
     const [form] = Form.useForm();
 
     const onFinish = (values) => {
-        console.log('Received values of form: ', values);
+        console.log('Received values of form: ', values);        
     };
+    const StyledForm = styled(Form)`
+            .ant-row{
+                margin-bottom: 0;
+            }
+
+            .ant-row:last-of-type{
+                margin-top: 10px;
+            }
+
+            .ant-row:nth-last-of-type(2){
+                margin-top: 20px;
+            }
+        `;
 
     return (
-        <Form
+        <StyledForm
             {...formItemLayout}
             form={form}
             name="register"
             wrapperCol="left"
             style={{ color: "#fff" }}
             onFinish={onFinish}
+            labelAlign="left"
             scrollToFirstError
         >
             <Form.Item
@@ -136,12 +165,12 @@ const RegistrationForm = () => {
                     I have read the <a href="" style={{ color: "#fff" }}>agreement</a>
                 </Checkbox>
             </Form.Item>
-            <Form.Item {...tailFormItemLayout}>
+            <Form.Item {...btnFormItemLayout}>
                 <Button type="normal" htmlType="submit">
                     Register
         </Button>
             </Form.Item>
-        </Form>
+        </StyledForm>
     );
 };
 
