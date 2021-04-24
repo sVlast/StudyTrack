@@ -1,0 +1,9 @@
+.regalign{
+    width: 65%;
+    margin: 0 auto;
+}
+
+#register.ant-form-horizontal{
+    width: 80%;
+    margin: 0 auto;
+}

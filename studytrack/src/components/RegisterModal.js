@@ -1,36 +1,35 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'antd';
 import styled from 'styled-components';
-import HorizontalLoginForm from './AntForm';
-import './LogInModal.css';
+import RegistrationForm from './AntRegForm';
+import './RegisterModal.css';
 
-const LogInModal = () => {
+const RegisterModal = () => {
     const [visible, setVisible] = useState(false);
     const StyledModal = styled(Modal)`
-    .ant-modal{
+     .ant-modal{
     text-decoration: none;
     width: 100%;
     }
-.ant-modal-content{
+    .ant-modal-content{
+        border-radius: 20px;
+        background-color: #1890FF;
+        height: 700px;
+        
+    }
+.ant-modal-body{
     min-width: 580px ;
     background-color: #1890FF !important;
-    height: 700px;
-    border-radius: 20px !important;
-
+    padding-bottom: 0;
 }
 
 .ant-modal-header{
     text-align: center;
-    border-radius: 20px 20px 0 0 !important;
-    border: none !important;
+    border-radius: 20px 20px 0 0;
+    border: none;
+    background-color: #1890FF;
 }
 
-.ant-modal-body{
-    background-color: #fff;
-    text-align: center;
-
-
-}
 .ant-modal-body img{
     display: flex;
     align-items: center;
@@ -41,19 +40,14 @@ const LogInModal = () => {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     text-align: center;
-    margin-top: 20px;
     font-size: 22px;
+    color: #fff;
+    margin-top: 20px;
 }
 
-.ant-modal-body p:last-of-type{
-    margin: 80px 0 30px;
-    padding: 0;
-}
 
-a.forgot-pass{
-    color: #BFBFBF;
-    margin-top: 40px;
-    display: inline-block;
+a.registerlink{
+    color: #fff;
 }
 
 .ant-modal form{
@@ -65,47 +59,52 @@ a.forgot-pass{
     border: none !important;
     color: #fff;
 }
-.ant-modal-footer p{
-    margin-top: 40px;
-}
+
 .ant-modal-footer button{
     display: flex;
     justify-content: center;
     margin: 0 auto;
 }
 
-
+.ant-modal-close-x{
+    color:#fff;
+}
+.ant-form-item-label > label{
+    color: #fff;
+}
+#text{
+    color: #fff;
+}
+.ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before{
+    color:#fff;
+}
     `;
     return (
         <>
             <Button type="primary" onClick={() => setVisible(true)}>
-                Log in
+                Register
       </Button>
             <StyledModal
                 title=" "
                 centered
+                className="regmodal"
                 visible={visible}
                 onOk={() => setVisible(false)}
                 onCancel={() => setVisible(false)}
                 width={1000}
                 footer={[
-                    <p>Don't have an account?</p>,
-                    <Button type="normal">Register</Button>
+                    <p>Already have an account? Login <a className="registerlink" href="#">here</a></p>,
+                    
                 ]}
             >
-                <img src="/images/ST_Logo.png" alt="logo"></img>
-                <p>Welcome to StudyTrack</p>
-                <p>Log in</p>
-                <HorizontalLoginForm className='modal-login-form'/>
-<<<<<<< HEAD
-                <a href="/" className="forgot-pass">Forgot password?</a>
-            </Modal>
-=======
-                <a href="#" className="forgot-pass">Forgot password?</a>
+                <img src="/images/ST_Logo_white.png" alt="logo"></img>
+                <p>Register to StudyTrack</p>
+                <div className="regalign">
+                <RegistrationForm/>
+                </div>  
             </StyledModal>
->>>>>>> frontend
         </>
     );
 };
 
-export default LogInModal;
+export default RegisterModal;

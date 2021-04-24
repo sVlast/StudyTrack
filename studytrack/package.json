@@ -12,7 +12,9 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-firebase-hooks": "^3.0.3",
+    "react-is": "^17.0.2",
     "react-scripts": "4.0.3",
+    "styled-components": "^5.2.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -41,5 +43,8 @@
   },
   "devDependencies": {
     "eslint-config-react-app": "^6.0.0"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   }
 }

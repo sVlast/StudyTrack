@@ -6,16 +6,16 @@ import 'firebase/auth';
 import './App.css';
 import 'antd/dist/antd.css';
 import Basicform from "./components/Basicform";
+import RegistrationForm from "./components/AntRegForm.js";
+import RegisterModal from "./components/RegisterModal.js";
+//let database = firebase.database();
 
 
 function App() {
   return (
     <>
-      <LogInModal />
-      <div>
-        <h1>test</h1>
-        <Basicform />
-      </div>
+      <LogInModal/>
+      <RegisterModal/>
     </>
   );
 }
