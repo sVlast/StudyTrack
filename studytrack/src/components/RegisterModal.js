@@ -72,6 +72,9 @@ const RegisterModal = () => {
         .ant-form-item-label > label{
             color: #fff;
         }
+        .ant-form-item-required > .anticon{
+            color: #fff;
+        }
         #text{
             color: #fff;
         }
