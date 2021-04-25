@@ -53,6 +53,7 @@ const btnFormItemLayout = {
 };
 
 
+
 //const auth = getAuth();
 
 const RegistrationForm = () => {
@@ -154,7 +155,7 @@ const RegistrationForm = () => {
                 <Input.Password />
             </Form.Item>
 
-            <Form.Item
+            {/* <Form.Item
                 name="username"
                 label="Username"
                 tooltip="What do you want others to call you?"
@@ -167,9 +168,9 @@ const RegistrationForm = () => {
                 ]}
             >
                 <Input />
-            </Form.Item>
+            </Form.Item> */}
 
-            <Form.Item
+            {/* <Form.Item
                 name="agreement"
                 valuePropName="checked"
                 rules={[
@@ -183,7 +184,7 @@ const RegistrationForm = () => {
                 <Checkbox id="regcheck" style={{ color: "#fff" }}>
                     I have read the <a href="" style={{ color: "#fff" }}>agreement</a>
                 </Checkbox>
-            </Form.Item>
+            </Form.Item> */}
             <Form.Item {...btnFormItemLayout}>
                 <Button type="normal" htmlType="submit">
                     Register

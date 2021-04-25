@@ -26,15 +26,19 @@ const HorizontalLoginForm = () => {
   return (
     <StyledForm form={form} name="horizontal_login" layout="inline" alignment="center-align" onFinish={onFinish}>
       <Form.Item
-        name="username"
+        name="email"
         rules={[
           {
-            required: true,
-            message: 'Please input your username!',
+              type: 'email',
+              message: 'The input is not valid E-mail!',
           },
-        ]}
+          {
+              required: true,
+              message: 'Please input your E-mail!',
+          },
+      ]}
       >
-        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
+        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Email" />
       </Form.Item>
       <Form.Item
         name="password"
