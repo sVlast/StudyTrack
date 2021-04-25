@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Form, Input, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
 import './AntRegForm.css';
 import styled from 'styled-components';
+import {auth} from "../util/firebase.js";
+
+
 
 const { Option } = Select;
 
@@ -49,11 +52,27 @@ const btnFormItemLayout = {
     },
 };
 
+
+//const auth = getAuth();
+
 const RegistrationForm = () => {
     const [form] = Form.useForm();
 
     const onFinish = (values) => {
-        console.log('Received values of form: ', values);        
+        console.log('Received values of form: ', values);
+        
+        auth.createUserWithEmailAndPassword(values.email, values.password)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // ..
+        });
+
     };
     const StyledForm = styled(Form)`
             .ant-row{
