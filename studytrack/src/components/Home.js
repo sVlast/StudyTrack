@@ -1,5 +1,6 @@
-import LogInModal from "./components/LogInModal.js";
-import RegisterModal from "./components/RegisterModal.js";
+import React from 'react';
+import LogInModal from "./LogInModal.js";
+import RegisterModal from "./RegisterModal.js";
 
 function Home() {
     return (

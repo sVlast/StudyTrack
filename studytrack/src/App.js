@@ -1,9 +1,5 @@
 import firebase from './util/firebase';
-
-import LogInModal from "./components/LogInModal.js";
-import RegistrationForm from "./components/AntRegForm.js";
-import RegisterModal from "./components/RegisterModal.js";
-
+import Home from "./components/Home.js";
 import './App.css';
 import 'antd/dist/antd.css';
 
@@ -14,8 +10,7 @@ import Basicform from "./components/Basicform";
 function App() {
   return (
     <>
-      <LogInModal/>
-      <RegisterModal/>
+      <Home/>
     </>
   );
 }
