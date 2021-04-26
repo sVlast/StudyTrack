@@ -42,14 +42,11 @@ const RegisterModal = () => {
             text-align: center;
             font-size: 22px;
             color: #fff;
-            margin: 20px 0 0;
+            margin: 40px 0 20px;
         }
-
-
         a.registerlink{
             color: #fff;
         }
-
         .ant-modal form{
             margin:0 auto;
         }
@@ -59,13 +56,9 @@ const RegisterModal = () => {
             border: none !important;
             color: #fff;
         }
-
-        .ant-modal-footer button{
-            display: flex;
-            justify-content: center;
-            margin: 0 auto;
+        .ant-modal-footer p{
+            margin-top: 40px;
         }
-
         .ant-modal-close-x{
             color:#fff;
         }

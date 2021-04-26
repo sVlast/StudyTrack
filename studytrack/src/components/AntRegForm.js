@@ -81,12 +81,9 @@ const RegistrationForm = () => {
             }
 
             .ant-row:last-of-type{
-                margin-top: 10px;
-            }
-
-            .ant-row:nth-last-of-type(2){
                 margin-top: 20px;
             }
+
         `;
 
     return (
