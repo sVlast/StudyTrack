@@ -5,12 +5,14 @@ import 'antd/dist/antd.css';
 
 //Test components
 import Basicform from "./components/Basicform";
+import Dashboard from './components/Dashboard';
 
 
 function App() {
   return (
     <>
       <Home/>
+      <Dashboard/>
     </>
   );
 }
