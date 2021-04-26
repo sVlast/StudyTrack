@@ -2,7 +2,7 @@ import React from 'react';
 import LogInModal from "./LogInModal.js";
 import RegisterModal from "./RegisterModal.js";
 
-function Home() {
+function LandingPage() {
     return (
         <>
             <LogInModal />
@@ -11,4 +11,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default LandingPage;
