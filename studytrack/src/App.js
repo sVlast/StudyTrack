@@ -6,6 +6,7 @@ import 'antd/dist/antd.css';
 import Basicform from "./components/Basicform";
 //Working components
 import Dashboard from './components/Dashboard.js';
+import Dashboard from './components/Dashboard/Dashboard.js';
 import LandingPage from './components/Landing.js';
 
 
