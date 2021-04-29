@@ -4,7 +4,7 @@ import 'antd/dist/antd.css';
 
 //Test components
 import Basicform from "./components/Basicform";
-import Dashboard from './components/Dashboard.js';
+import Dashboard from './components/Dashboard/Dashboard.js';
 import LandingPage from './components/Landing.js';
 
 
