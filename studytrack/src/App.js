@@ -4,6 +4,7 @@ import 'antd/dist/antd.css';
 
 //Test components
 import Basicform from "./components/Basicform";
+//Working components
 import Dashboard from './components/Dashboard.js';
 import LandingPage from './components/Landing.js';
 
@@ -17,6 +18,6 @@ function App() {
   );
 }
 
-console.log("loging", firebase);
+//console.log("loging", firebase);
 
 export default App;
