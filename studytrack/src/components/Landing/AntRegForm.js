@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Form, Input, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
 import './AntRegForm.css';
 import styled from 'styled-components';
-import {auth} from "../util/firebase.js";
+import {auth} from "../../util/firebase.js";
 
 
 
