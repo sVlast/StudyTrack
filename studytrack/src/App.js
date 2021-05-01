@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import Basicform from "./components/Basicform";
 //Working components
 import Dashboard from './components/Dashboard/Dashboard.js';
-import LandingPage from './components/Landing.js';
+import LandingPage from './components/Landing/Landing.js';
 
 
 function App() {
