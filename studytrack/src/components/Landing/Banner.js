@@ -12,7 +12,7 @@ function Banner() {
             <img src="/images/BannerImg.png" alt="banner"></img>
             </div>
             <div className="bannerright">
-                <p>Tvoje studiranje</p>
+                <p>Tvoje studiranje </p>
                 <p id="blue">organizirano.</p>
                 <LogInModal/>
             </div>

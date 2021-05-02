@@ -2,7 +2,7 @@
     width:50%;
     display: flex;
 }
-img{
+.bannerleft>img{
     width: 100%;
 }
 .bannerright{
@@ -21,13 +21,21 @@ img{
     width: 80%;
 }
 
-p{
+.bannerright>p{
     font-family: 'Roboto', sans-serif;
     font-size: 72px;
     font-weight: 300;
     margin: 0;
+    line-height: 110%;
 }
 
 #blue{
     color: #1890FF;
+    margin-bottom: 50px;
+}
+
+.bannerright>button{
+    width:200px;
+    height: 50px;
+    font-size: 20px;
 }
