@@ -8,7 +8,7 @@ const RegisterModal = () => {
     
     return (
         <>
-            <Button type="primary" onClick={() => setVisible(true)}>
+            <Button type="disabled" onClick={() => setVisible(true)}>
                 Register
       </Button>
             <StyledRegModal
