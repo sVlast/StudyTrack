@@ -3,7 +3,7 @@ import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 import './AntForm.css';
-
+import {auth} from "../../util/firebase.js";
 
 const HorizontalLoginForm = () => {
   const [form] = Form.useForm();
@@ -20,6 +20,16 @@ const HorizontalLoginForm = () => {
   }, []);
 
   const onFinish = (values) => {
+    auth.signInWithEmailAndPassword(values.email, values.password)
+  .then((userCredential) => {
+    // Signed in
+    var user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  });
     console.log('Finish:', values);
   };
 
