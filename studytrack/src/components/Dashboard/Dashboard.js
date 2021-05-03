@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Layout } from "antd";
+import { Layout, Calendar, Badge } from "antd";
+import { Route, useHistory } from 'react-router-dom';
+
 import TopicMenu from "./TopicMenu";
 import "./Dashboard.css";
 import NavBar from "./NavBar";
@@ -7,28 +9,106 @@ import SideBar from "./SideBar";
 
 
 function Dashboard() {
-    const topics = ["First topic", "Second topic", "Third topic"];
+    const topics = ["Calendar", "ToDo", "Profile"];
+    const history = useHistory();
+
     const [contentIndex, setContentIndex] = useState(0);
-    const [selectedKey, setSelectedKey] = useState("0");
     const changeSelectedKey = (event) => {
         const key = event.key;
-        setSelectedKey(key);
+        history.push(`/Dashboard/${topics[key]}`);
         setContentIndex(+key);
     };
     const Menu = (
         <TopicMenu
             topics={topics}
-            selectedKey={selectedKey}
+            selectedKey={contentIndex.toString()}
             changeSelectedKey={changeSelectedKey}
         />
     );
+
+    function getListData(value) {
+        let listData;
+        switch (value.date()) {
+            case 8:
+                listData = [
+                    { type: 'warning', content: 'This is warning event.' },
+                    { type: 'success', content: 'This is usual event.' },
+                ];
+                break;
+            case 10:
+                listData = [
+                    { type: 'warning', content: 'This is warning event.' },
+                    { type: 'success', content: 'This is usual event.' },
+                    { type: 'success', content: 'This is error event.' },
+                ];
+                break;
+            case 15:
+                listData = [
+                    { type: 'warning', content: 'This is warning event' },
+                    { type: 'success', content: 'This is very long usual event。。....' },
+                    { type: 'success', content: 'This is error event 1.' },
+                    { type: 'success', content: 'This is error event 2.' },
+                    { type: 'success', content: 'This is error event 3.' },
+                    { type: 'success', content: 'This is error event 4.' },
+                ];
+                break;
+            default:
+        }
+        return listData || [];
+    }
+
+    function dateCellRender(value) {
+        const listData = getListData(value);
+        return (
+            <ul className="events">
+                {listData.map(item => (
+                    <li key={item.content}>
+                        <Badge status={item.type} text={item.content} />
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+
+    function getMonthData(value) {
+        if (value.month() === 8) {
+            return 1394;
+        }
+    }
+
+    function monthCellRender(value) {
+        const num = getMonthData(value);
+        return num ? (
+            <div className="notes-month">
+                <section>{num}</section>
+                <span>Backlog number</span>
+            </div>
+        ) : null;
+    }
+
+
+
+
     return (
         <div className="App">
             <NavBar menu={Menu} />
             <Layout>
                 <SideBar menu={Menu} />
                 <Layout.Content className="content">
-                    {topics[contentIndex]}
+                    <Route path="/Dashboard/Calendar" component={() => (
+
+                        <Calendar dateCellRender={dateCellRender} monthCellRender={monthCellRender} />
+                    )} />
+                    <Route path="/Dashboard/Profile" component={() => (
+
+                        <div>Profle</div>
+                    )} />
+                    <Route path="/Dashboard/ToDo" component={() => (
+
+                        <div>Henlo</div>
+                    )} />
+
+
                 </Layout.Content>
             </Layout>
         </div>
