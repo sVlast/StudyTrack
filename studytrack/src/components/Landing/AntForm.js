@@ -27,7 +27,7 @@ const HorizontalLoginForm = () => {
     // Signed in
     var user = userCredential.user;
     console.log(userCredential);
-    history.push("/Dashboard");
+    history.push("/dashboard");
     // ...
   })
   .catch((error) => {

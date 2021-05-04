@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 import { Form, Input, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
 import './AntRegForm.css';
 import styled from 'styled-components';
 import {auth} from "../../util/firebase.js";
-
 
 
 const { Option } = Select;
@@ -53,24 +53,24 @@ const btnFormItemLayout = {
 };
 
 
-
-//const auth = getAuth();
-
 const RegistrationForm = () => {
     const [form] = Form.useForm();
+    const history = useHistory();
 
     const onFinish = (values) => {
         console.log('Received values of form: ', values);
-        
         auth.createUserWithEmailAndPassword(values.email, values.password)
         .then((userCredential) => {
           // Signed in 
           const user = userCredential.user;
           // ...
+          console.log("userCredential",userCredential);
+          history.push("/dashboard");
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
+          console.log(error)
           // ..
         });
 

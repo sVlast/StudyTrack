@@ -49,15 +49,12 @@ function App() {
 
       <Switch>
         <Route exact path="/">
-          <Link to="/Dashboard">Link</Link>
+          <Link to="/dashboard">Link</Link>
           <Button type="primary" onClick={handleLogState}>Check user log state</Button>
           <Button type="primary" onClick={handleLogOut}> Log Out </Button>
           <LandingPage />
         </Route>
-        <Route path="/Dashboard">
-          {/*
-          test route
-          */}
+        <Route path="/dashboard">
           <Link to="/">Link</Link>
           <Dashboard />
         </Route>
@@ -67,6 +64,5 @@ function App() {
   );
 }
 
-//console.log("loging", firebase);
 
 export default App;
