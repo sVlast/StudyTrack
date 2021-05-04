@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Drawer, Button } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import "./NavBar.css";
-import logo from "../../logo.svg";
 
 
 const NavBar = ({ menu }) => {
@@ -24,7 +23,6 @@ const NavBar = ({ menu }) => {
             >
                 {menu}
             </Drawer>
-            <a href="/"><img src={logo} className="logo" alt="logo" /></a>
         </nav>
     );
 };
