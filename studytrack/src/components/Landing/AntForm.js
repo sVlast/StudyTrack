@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from "react-router-dom";
 import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
@@ -8,6 +9,7 @@ import {auth} from "../../util/firebase.js";
 const HorizontalLoginForm = () => {
   const [form] = Form.useForm();
   const [, forceUpdate] = useState({}); // To disable submit button at the beginning.
+  const history = useHistory();
   const StyledForm = styled(Form)`
   .ant-form-inline{
     display:flex;
@@ -24,12 +26,17 @@ const HorizontalLoginForm = () => {
   .then((userCredential) => {
     // Signed in
     var user = userCredential.user;
+    console.log(userCredential);
+    history.push("/Dashboard");
     // ...
   })
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
   });
+
+    
+    
     console.log('Finish:', values);
   };
 
