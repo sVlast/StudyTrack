@@ -1,12 +1,12 @@
 import React from 'react';
 import LogInModal from "./LogInModal.js";
-import './Banner.css';
+import RegisterModal from "./RegisterModal.js";
+import './Content.css';
 
 
-function Banner() {
+function Content() {
     return (
         <>  
-            <br/>
             <div className="banner">
             <div className="bannerleft">
             <img src="/images/BannerImg.png" alt="banner"></img>
@@ -17,8 +17,12 @@ function Banner() {
                 <LogInModal/>
             </div>
             </div>
+            <div className="BlueContent">
+                <p>Registriraj se odmah</p>
+                <RegisterModal />
+            </div>
         </>
     );
 }
 
-export default Banner;
+export default Content;
