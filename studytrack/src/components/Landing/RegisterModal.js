@@ -3,24 +3,29 @@ import { Button } from 'antd';
 import { StyledRegModal } from './ModalStyle';
 import RegistrationForm from './AntRegForm';
 
-const RegisterModal = () => {
-    const [visible, setVisible] = useState(false);
+const RegisterModal = (props) => {
+    //const [visible, setVisible] = useState(false);
+
+    function handleSwap() {
+        props.changeVisibility(false);
+        props.changeOther(true);
+    }
     
     return (
         <>
-            <Button type="disabled" onClick={() => setVisible(true)}>
+            <Button type="disabled" onClick={() => props.changeVisibility(true)}>
                 Register
       </Button>
             <StyledRegModal
                 title=" "
                 centered
                 className="regmodal"
-                visible={visible}
-                onOk={() => setVisible(false)}
-                onCancel={() => setVisible(false)}
+                visible={props.isvisible}
+                //onOk={() => props.changeVisibility(true)}
+                onCancel={() => props.changeVisibility(false)}
                 width={1000}
                 footer={[
-                    <p>Already have an account? Login <a className="registerlink" href="#">here</a></p>,
+                    <p>Already have an account? Login <a className="registerlink" href="#" onClick={() =>{handleSwap()}}>here</a></p>,
                     
                 ]}
             >
