@@ -20,6 +20,7 @@
     flex-direction: row;
     margin: 0 auto;
     width: 80%;
+    user-select: none;
 }
 
 .bannerright>p{
@@ -28,6 +29,7 @@
     font-weight: 300;
     margin: 0;
     line-height: 110%;
+    
 }
 
 #blue{
