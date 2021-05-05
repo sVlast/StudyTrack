@@ -3,6 +3,7 @@
     display: flex;
 }
 .bannerleft>img{
+    max-width: 639px;
     width: 100%;
 }
 .bannerright{
@@ -38,4 +39,32 @@
     width:200px;
     height: 50px;
     font-size: 20px;
+}
+
+
+.BlueContent{
+    background-color: #1890FF;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.BlueContent>p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 42px;
+    font-weight: 300;
+    margin: 0;
+    color: #fff;
+    width: fit-content;
+}
+
+.BlueContent>button{
+    width:200px;
+    height: 50px;
+    font-size: 20px;
+    margin-top: 20px;
 }
