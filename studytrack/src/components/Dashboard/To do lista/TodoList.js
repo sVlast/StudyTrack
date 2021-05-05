@@ -42,7 +42,7 @@ function TodoList() {
     };
 
     return (
-        <div>
+        <div className='todolist'>
             <h1>What's the plan for today?</h1>
             <TodoForm onSubmit={addTodo} />
             <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updateTodo={updateTodo} />
