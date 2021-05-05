@@ -50,8 +50,8 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Link to="/dashboard">Link</Link>
-          <Button type="primary" onClick={handleLogState}>Check user log state</Button>
-          <Button type="primary" onClick={handleLogOut}> Log Out </Button>
+          {/* <Button type="primary" onClick={handleLogState}>Check user log state</Button>
+          <Button type="primary" onClick={handleLogOut}> Log Out </Button> */}
           <LandingPage />
         </Route>
         <Route path="/dashboard">

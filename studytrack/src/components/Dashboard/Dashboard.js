@@ -96,15 +96,15 @@ function Dashboard() {
             <Layout>
                 <SideBar menu={Menu} />
                 <Layout.Content className="content">
-                    <Route path="/Dashboard/Calendar" component={() => (
+                    <Route path="/dashboard/Calendar" component={() => (
 
                         <Calendar dateCellRender={dateCellRender} monthCellRender={monthCellRender} />
                     )} />
-                    <Route path="/Dashboard/Profile" component={() => (
+                    <Route path="/dashboard/Profile" component={() => (
 
                         <div>Profle</div>
                     )} />
-                    <Route path="/Dashboard/ToDo" component={() => (
+                    <Route path="/dashboard/ToDo" component={() => (
 
                         <TodoList/>
                     )} />
