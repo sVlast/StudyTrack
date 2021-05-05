@@ -31,7 +31,7 @@ function TodoForm(props) {
                 <>
                     <input
                         type="text"
-                        placeholder="Update your item"
+                        placeholder="Edit"
                         value={input}
                         name="text"
                         className="todo-input edit"
@@ -39,13 +39,13 @@ function TodoForm(props) {
                         ref={inputRef}
                         autoComplete='off'
                     />
-                    <button className='todo-button edit'>Update</button>
+                    <Button type="secondary" htmlType="submit">Update</Button>
                 </>
             ) : (
                 <>
                     <input
                         type="text"
-                        placeholder="Add a todo"
+                        placeholder="Dodaj zadatak"
                         value={input}
                         name="text"
                         className="todo-input"
@@ -53,7 +53,7 @@ function TodoForm(props) {
                         ref={inputRef}
                         autoComplete='off'
                     />
-                    <button className='todo-button'>Add todo</button>
+                    <Button type="primary" htmlType="submit">Add todo</Button>
                 </>
             )
 

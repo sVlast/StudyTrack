@@ -27,3 +27,33 @@
 .notes-month section {
   font-size: 28px;
 }
+
+.kalendar{
+  box-sizing: border-box;
+  margin: 0;
+  border-radius: 2px;
+  padding: 20px 20px 80px 20px;
+  background-color: #fff;
+  min-height: 60vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+.kalendar>h1{
+  font-weight: 300;
+  font-size: 36px;
+  text-align: left;
+}
+.profil{
+  box-sizing: border-box;
+  margin: 0;
+  border-radius: 2px;
+  padding: 20px 20px 80px 20px;
+  background-color: #fff;
+  min-height: 60vh;
+  font-family: 'Roboto', sans-serif;
+}
+.profil>h1{
+  font-weight: 300;
+  font-size: 36px;
+  text-align: left;
+}
