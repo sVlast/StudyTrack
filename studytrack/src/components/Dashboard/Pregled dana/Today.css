@@ -33,3 +33,7 @@
     display: flex;
     justify-content: space-between;
 }
+
+.today .ant-card-body::before, .today .ant-card-body::after{
+    content: none;
+}
