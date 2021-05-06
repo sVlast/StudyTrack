@@ -8,6 +8,7 @@ import SideBar from "./SideBar";
 import TodoList from "./To do lista/TodoList";
 import Today from "./Pregled dana/Today";
 import Kalendar from "./Kalendar/Kalendar";
+import Profil from "./Profil/Profil.js";
 
 
 function Dashboard() {
@@ -50,6 +51,7 @@ function Dashboard() {
 
                         <div className='profil'>
                             <h1>Profil</h1>
+                            <Profil />
                         </div>
                     )} />
                     <Route path="/dashboard/todo" component={() => (
