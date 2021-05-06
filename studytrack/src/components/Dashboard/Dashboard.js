@@ -10,7 +10,7 @@ import TodoList from "./To do lista/TodoList";
 
 
 function Dashboard() {
-    const topics = ["Calendar", "ToDo", "Profile"];
+    const topics = ["Today", "Calendar", "ToDo", "Profile"];
     const history = useHistory();
 
     const [contentIndex, setContentIndex] = useState(0);
@@ -96,12 +96,17 @@ function Dashboard() {
             <Layout>
                 <SideBar menu={Menu} />
                 <Layout.Content className="content">
+                    <Route path="/dashboard/today" component={() => (
+                        <div className='today'>
+                            <h1>Pregled dana</h1>
+                        </div>
+                    )} />
                     <Route path="/dashboard/calendar" component={() => (
                         <div className='kalendar'>
-                        <h1>Kalendar</h1>
+                            <h1>Kalendar</h1>
                             <Calendar dateCellRender={dateCellRender} monthCellRender={monthCellRender} />
                         </div>
-                        )} />
+                    )} />
                     <Route path="/dashboard/profile" component={() => (
 
                         <div className='profil'>
@@ -110,7 +115,7 @@ function Dashboard() {
                     )} />
                     <Route path="/dashboard/todo" component={() => (
 
-                        <TodoList/>
+                        <TodoList />
                     )} />
 
 

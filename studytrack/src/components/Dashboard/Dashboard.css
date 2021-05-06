@@ -57,3 +57,17 @@
   font-size: 36px;
   text-align: left;
 }
+.today{
+  box-sizing: border-box;
+  margin: 0;
+  border-radius: 2px;
+  padding: 20px 20px 80px 20px;
+  background-color: #fff;
+  min-height: 60vh;
+  font-family: 'Roboto', sans-serif;
+}
+.today>h1{
+  font-weight: 300;
+  font-size: 36px;
+  text-align: left;
+}
