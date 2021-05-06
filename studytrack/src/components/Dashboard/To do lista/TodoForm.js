@@ -1,5 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Button, Form } from 'antd';
+import { Button, DatePicker, Space } from 'antd';
+
+const { RangePicker } = DatePicker;
+
+function onChange(value, dateString) {
+    console.log('Selected Time: ', value);
+    console.log('Formatted Selected Time: ', dateString);
+}
+
+function onOk(value) {
+    console.log('onOk: ', value);
+}
 
 function TodoForm(props) {
     const [input, setInput] = useState(props.edit ? props.edit.value : '');
@@ -29,6 +40,14 @@ function TodoForm(props) {
         <form className='todo-form' onSubmit={handleSubmit}>
             {props.edit ? (
                 <>
+                    <Space className='date-space' direction="vertical" size={12}>
+                        <RangePicker
+                            showTime={{ format: 'HH:mm' }}
+                            format="MM-DD HH:mm"
+                            onChange={onChange}
+                            onOk={onOk}
+                        />
+                    </Space>
                     <input
                         type="text"
                         placeholder="Edit"
@@ -43,6 +62,14 @@ function TodoForm(props) {
                 </>
             ) : (
                 <>
+                        <Space className='date-space' direction="vertical" size={12}>
+                            <RangePicker
+                                showTime={{ format: 'HH:mm' }}
+                                format="MM-DD HH:mm"
+                                onChange={onChange}
+                                onOk={onOk}
+                            />
+                        </Space>
                     <input
                         type="text"
                         placeholder="Dodaj zadatak"
