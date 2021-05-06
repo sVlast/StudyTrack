@@ -28,7 +28,7 @@
   font-size: 28px;
 }
 
-.kalendar{
+.today, .profil, .todo-dash, .kalendar{
   box-sizing: border-box;
   margin: 0;
   border-radius: 2px;
@@ -38,35 +38,7 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.kalendar>h1{
-  font-weight: 300;
-  font-size: 36px;
-  text-align: left;
-}
-.profil{
-  box-sizing: border-box;
-  margin: 0;
-  border-radius: 2px;
-  padding: 20px 20px 80px 20px;
-  background-color: #fff;
-  min-height: 60vh;
-  font-family: 'Roboto', sans-serif;
-}
-.profil>h1{
-  font-weight: 300;
-  font-size: 36px;
-  text-align: left;
-}
-.today{
-  box-sizing: border-box;
-  margin: 0;
-  border-radius: 2px;
-  padding: 20px 20px 80px 20px;
-  background-color: #fff;
-  min-height: 60vh;
-  font-family: 'Roboto', sans-serif;
-}
-.today>h1{
+.profil>h1, .today>h1, .kalendar>h1, .todo-dash>h1{
   font-weight: 300;
   font-size: 36px;
   text-align: left;

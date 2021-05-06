@@ -7,6 +7,7 @@ import "./Dashboard.css";
 import NavBar from "./NavBar";
 import SideBar from "./SideBar";
 import TodoList from "./To do lista/TodoList";
+import Today from "./Pregled dana/Today";
 
 
 function Dashboard() {
@@ -99,6 +100,7 @@ function Dashboard() {
                     <Route path="/dashboard/today" component={() => (
                         <div className='today'>
                             <h1>Pregled dana</h1>
+                            <Today/>
                         </div>
                     )} />
                     <Route path="/dashboard/calendar" component={() => (
@@ -114,8 +116,10 @@ function Dashboard() {
                         </div>
                     )} />
                     <Route path="/dashboard/todo" component={() => (
-
-                        <TodoList />
+                        <div className='todo-dash'>
+                            <h1>To do lista</h1>
+                            <TodoList />
+                        </div>
                     )} />
 
 

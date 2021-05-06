@@ -1,0 +1,35 @@
+.today-parent{
+    display: flex;
+    align-items: flex-start;
+}
+.raspored{
+    width: 50%;
+}
+
+.todo-raspored{
+    width: 50%;
+}
+
+.todo-raspored>.todolist{
+    padding: 0;
+}
+
+.raspored>h2{
+  font-weight: 300;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+
+.card-left{
+    text-align: left;
+    width: min-content;
+}
+.card-right{
+    text-align: right;
+    width: min-content;
+}
+.today .ant-card-body{
+    display: flex;
+    justify-content: space-between;
+}
