@@ -50,7 +50,7 @@ function TodoForm(props) {
                     </Space>
                     <input
                         type="text"
-                        placeholder="Edit"
+                        placeholder="Edit the task"
                         value={input}
                         name="text"
                         className="todo-input edit"
@@ -72,7 +72,7 @@ function TodoForm(props) {
                         </Space>
                     <input
                         type="text"
-                        placeholder="Dodaj zadatak"
+                        placeholder="Add a task"
                         value={input}
                         name="text"
                         className="todo-input"

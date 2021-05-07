@@ -23,7 +23,7 @@ function Today(){
         <>
         <div className='today-parent'>
             <div className='raspored'>
-                <h2>Dnevni raspored</h2>
+                <h2>Daily schedule</h2>
                 <List
                     grid={{ gutter: 16, column: 1 }}
                     dataSource={data}

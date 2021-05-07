@@ -37,13 +37,13 @@ function Dashboard() {
                 <Layout.Content className="content">
                     <Route path="/dashboard/today" component={() => (
                         <div className='today'>
-                            <h1>Pregled dana</h1>
+                            <h1>Today's tasks</h1>
                             <Today/>
                         </div>
                     )} />
                     <Route path="/dashboard/calendar" component={() => (
                         <div className='kalendar'>
-                            <h1>Kalendar</h1>
+                            <h1>Calendar</h1>
                             <Kalendar/>
                         </div>
                     )} />
@@ -56,7 +56,7 @@ function Dashboard() {
                     )} />
                     <Route path="/dashboard/todo" component={() => (
                         <div className='todo-dash'>
-                            <h1>To do lista</h1>
+                            <h1>To do list</h1>
                             <TodoList />
                         </div>
                     )} />

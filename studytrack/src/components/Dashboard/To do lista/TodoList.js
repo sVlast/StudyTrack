@@ -43,7 +43,7 @@ function TodoList() {
 
     return (
         <div className='todolist'>
-            <h2>Dodaj zadatak</h2>
+            <h2>Add a task</h2>
             <TodoForm onSubmit={addTodo} />
             <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updateTodo={updateTodo} />
         </div>
