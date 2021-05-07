@@ -17,13 +17,13 @@ function Content() {
             <img src="/images/BannerImg.png" alt="banner"></img>
             </div>
             <div className="bannerright">
-                <p>Tvoje studiranje </p>
-                <p id="blue">organizirano.</p>
+                <p>Your studying </p>
+                <p id="blue">organized.</p>
                 <LogInModal isvisible={loginVisibility} changeVisibility={changeLogInVisibility} changeOther={changeRegisterVisibility}/>
             </div>
             </div>
             <div className="BlueContent">
-                <p>Registriraj se odmah</p>
+                <p>Register now</p>
                 <RegisterModal isvisible={registerVisibility} changeVisibility={changeRegisterVisibility} changeOther={changeLogInVisibility}/>
             </div>
         </>
