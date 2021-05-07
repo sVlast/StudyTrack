@@ -9,21 +9,28 @@ import TodoList from "./To do lista/TodoList";
 import Today from "./Pregled dana/Today";
 import Kalendar from "./Kalendar/Kalendar";
 import Profil from "./Profil/Profil.js";
-
+import {
+    DashboardOutlined ,
+    CalendarOutlined ,
+    OrderedListOutlined ,
+    UserOutlined 
+} from '@ant-design/icons'
 
 function Dashboard() {
-    const topics = ["Today", "Calendar", "ToDo", "Profile"];
+    const topics = ["today", "calendar", "todo", "profile"];
+    const icons = [<DashboardOutlined />,<CalendarOutlined />,<OrderedListOutlined />,<UserOutlined />]
     const history = useHistory();
 
     const [contentIndex, setContentIndex] = useState(0);
     const changeSelectedKey = (event) => {
         const key = event.key;
-        history.push(`/Dashboard/${topics[key]}`);
+        history.push(`/dashboard/${topics[key]}`);
         setContentIndex(+key);
     };
     const Menu = (
         <TopicMenu
             topics={topics}
+            icons={icons}
             selectedKey={contentIndex.toString()}
             changeSelectedKey={changeSelectedKey}
         />

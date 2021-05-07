@@ -1,15 +1,20 @@
-import React from "react";
+import React,{useState} from "react";
 import { Layout } from "antd";
 import "./SideBar.css"
 
 const SideBar = ({ menu }) => {
+
+
+
     return (
         <Layout.Sider
+            
+            collapsible="true"
             className="sidebar"
             breakpoint={"lg"}
             theme="light"
-            collapsedWidth={0}
-            trigger={null}
+            collapsedWidth={80}
+            
         >
             {menu}
         </Layout.Sider>
