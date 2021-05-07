@@ -1,21 +1,21 @@
 import React from 'react';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button } from 'antd';
 const layout = {
     labelCol: {
-        span: 8,
+        span: 2,
     },
     wrapperCol: {
-        span: 16,
+        span: 5,
     },
 };
 const tailLayout = {
     wrapperCol: {
-        offset: 8,
-        span: 16,
+        offset: 2,
+        span: 5,
     },
 };
 
-const UserForm = () => {
+const PasswordForm = () => {
     const onFinish = (values) => {
         console.log('Success:', values);
     };
@@ -35,33 +35,41 @@ const UserForm = () => {
             onFinishFailed={onFinishFailed}
         >
             <Form.Item
-                label="Username"
-                name="username"
+                label="Old Password"
+                name="password"
                 rules={[
                     {
-                        required: true,
+                        required: false,
                         message: 'Please input your username!',
                     },
                 ]}
             >
-                <Input />
+                <Input defaultValue="Password" type="password"/>
             </Form.Item>
 
             <Form.Item
-                label="Password"
+                label="New Password"
                 name="password"
                 rules={[
                     {
-                        required: true,
-                        message: 'Please input your password!',
+                        required: false,
+                        message: 'Please input your username!',
                     },
                 ]}
             >
-                <Input.Password />
+                <Input defaultValue="Password" type="password" />
             </Form.Item>
-
-            <Form.Item {...tailLayout} name="remember" valuePropName="checked">
-                <Checkbox>Remember me</Checkbox>
+            <Form.Item
+                label="Confirm Password"
+                name="password"
+                rules={[
+                    {
+                        required: false,
+                        message: 'Please input your username!',
+                    },
+                ]}
+            >
+                <Input defaultValue="Password" type="password" />
             </Form.Item>
 
             <Form.Item {...tailLayout}>
@@ -74,4 +82,4 @@ const UserForm = () => {
 };
 
 
-export default UserForm;
+export default PasswordForm;

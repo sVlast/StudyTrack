@@ -50,7 +50,7 @@ function Dashboard() {
                     <Route path="/dashboard/profile" component={() => (
 
                         <div className='profil'>
-                            <h1>Profil</h1>
+                            <h1>Profile</h1>
                             <Profil />
                         </div>
                     )} />
