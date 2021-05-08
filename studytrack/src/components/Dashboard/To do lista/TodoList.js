@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
+import firebase from "../../../util/firebase.js"
 import Todo from './Todo';
 import TodoForm from './TodoForm'
 import './TodoList.css'
 
 function TodoList() {
     const [todos, setTodos] = useState([]);
+
+    const taskRef = firebase.database().ref("Task")
 
     const addTodo = todo => {
         if (!todo.text || /^\s*$/.test(todo.text)) {
@@ -14,6 +17,13 @@ function TodoList() {
         const newTodos = [todo, ...todos]
 
         setTodos(newTodos)
+        const task = {
+            id:todo.id,
+            description:todo.text,
+            complete: false,
+        };
+        console.log(task);
+        taskRef.push(task);
     };
 
     const updateTodo = (todoId, newValue) => {
