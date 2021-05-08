@@ -11,6 +11,8 @@ function TodoList() {
             return
         }
 
+    console.log(todo)
+
         const newTodos = [todo, ...todos]
 
         setTodos(newTodos)

@@ -1,24 +1,68 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { List, Card } from 'antd';
 import TodoList from '../To do lista/TodoList';
 import './Today.css';
+import Todo from '../To do lista/Todo';
 
 const data = [
     {
         title: 'Title 1',
+        startTime: 11,
+        endTime: 12,
+        type: 'Geografija'
     },
     {
         title: 'Title 2',
-    },
-    {
+        startTime: 11,
+        endTime: 12,
+        type: 'Geografija'
+    },{
         title: 'Title 3',
-    },
-    {
+        startTime: 11,
+        endTime: 12,
+        type: 'Geografija'
+    },{
         title: 'Title 4',
+        startTime: 11,
+        endTime: 12,
+        type: 'Kosovo'
+    },{
+        title: 'Title 234',
+        startTime: 21,
+        endTime: 20,
+        type: 'Geografija'
     },
 ];
 
 function Today(){
+
+    const [todos, setTodos] = useState([{id: 2971, text: "Srbija"}, {id: 29271, text: "Kosovo"}]);
+
+    const updateTodo = (todoId, newValue) => {
+        if (!newValue.text || /^\s*$/.test(newValue.text)) {
+            return;
+        }
+
+        setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
+    }
+
+
+    const removeTodo = id => {
+        const removeArr = [...todos].filter(todo => todo.id !== id)
+
+        setTodos(removeArr);
+    };
+
+    const completeTodo = id => {
+        let updatedTodos = todos.map(todo => {
+            if (todo.id === id) {
+                todo.isComplete = !todo.isComplete;
+            }
+            return todo;
+        })
+        setTodos(updatedTodos);
+    };
+
     return (
         <>
         <div className='today-parent'>
@@ -29,13 +73,14 @@ function Today(){
                     dataSource={data}
                     renderItem={item => (
                     <List.Item>
-                        <Card title={item.title}><span>Flag</span><span>Time</span></Card>
+                        <Card title={item.title}><span>{item.type}</span><span>{`${item.startTime} - ${item.endTime}`}</span></Card>
                     </List.Item>
                 )}
             />    
             </div>
             <div className='todo-raspored'>
-                <TodoList/>
+            <h2>Danasnji zadatki</h2>
+             <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updateTodo={updateTodo} />
             </div>
         </div>
         </>
