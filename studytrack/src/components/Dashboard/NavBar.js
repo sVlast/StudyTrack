@@ -16,7 +16,7 @@ const NavBar = ({ menu }) => {
                 onClick={() => setVisible(true)}
             >
                 Log out
-            </Button>            
+            </Button>
         </Header>
     );
 };

@@ -16,17 +16,17 @@ const data = [
         startTime: 11,
         endTime: 12,
         type: 'Geografija'
-    },{
+    }, {
         title: 'Title 3',
         startTime: 11,
         endTime: 12,
         type: 'Geografija'
-    },{
+    }, {
         title: 'Title 4',
         startTime: 11,
         endTime: 12,
         type: 'Kosovo'
-    },{
+    }, {
         title: 'Title 234',
         startTime: 21,
         endTime: 20,
@@ -34,7 +34,7 @@ const data = [
     },
 ];
 
-function Today(){
+function Today() {
 
     const [todos, setTodos] = useState([{ id: 2971, text: "Your daily task #1" }, { id: 29271, text: "Your daily task #2" }, { id: 29241, text: "Your daily task #3" }]);
 
@@ -65,24 +65,24 @@ function Today(){
 
     return (
         <>
-        <div className='today-parent'>
-            <div className='raspored'>
-                <h2>Daily schedule</h2>
-                <List
-                    grid={{ gutter: 16, column: 1 }}
-                    dataSource={data}
-                    renderItem={item => (
-                    <List.Item>
-                        <Card title={item.title}><span>{item.type}</span><span>{`${item.startTime} - ${item.endTime}`}</span></Card>
-                    </List.Item>
-                )}
-            />    
+            <div className='today-parent'>
+                <div className='raspored'>
+                    <h2>Daily schedule</h2>
+                    <List
+                        grid={{ gutter: 16, column: 1 }}
+                        dataSource={data}
+                        renderItem={item => (
+                            <List.Item>
+                                <Card title={item.title}><span>{item.type}</span><span>{`${item.startTime} - ${item.endTime}`}</span></Card>
+                            </List.Item>
+                        )}
+                    />
+                </div>
+                <div className='todo-raspored'>
+                    <h2>Daily tasks</h2>
+                    <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updateTodo={updateTodo} />
+                </div>
             </div>
-            <div className='todo-raspored'>
-            <h2>Daily tasks</h2>
-             <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updateTodo={updateTodo} />
-            </div>
-        </div>
         </>
     )
 }

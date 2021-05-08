@@ -11,7 +11,7 @@ function TodoList() {
             return
         }
 
-    console.log(todo)
+        console.log(todo)
 
         const newTodos = [todo, ...todos]
 

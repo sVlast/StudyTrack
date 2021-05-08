@@ -10,10 +10,10 @@ import Today from "./Pregled dana/Today";
 import Kalendar from "./Kalendar/Kalendar";
 import Profil from "./Profil/Profil.js";
 import {
-    DashboardOutlined ,
-    CalendarOutlined ,
-    OrderedListOutlined ,
-    UserOutlined 
+    DashboardOutlined,
+    CalendarOutlined,
+    OrderedListOutlined,
+    UserOutlined
 } from '@ant-design/icons'
 
 
@@ -22,7 +22,7 @@ const { Content } = Layout;
 function Dashboard() {
     //icons must same lenght as topics check
     const topics = ["today", "calendar", "todo", "profile"];
-    const icons = [<DashboardOutlined />,<CalendarOutlined />,<OrderedListOutlined />,<UserOutlined />]
+    const icons = [<DashboardOutlined />, <CalendarOutlined />, <OrderedListOutlined />, <UserOutlined />]
     const history = useHistory();
 
     const [contentIndex, setContentIndex] = useState(0);
@@ -43,19 +43,19 @@ function Dashboard() {
     return (
         <div className="App">
             <Layout className="layout">
-                 <NavBar menu={Menu} />
-                 <SideBar menu={Menu} />
-                 <Content className="content">
+                <NavBar menu={Menu} />
+                <SideBar menu={Menu} />
+                <Content className="content">
                     <Route exact path="/dashboard/(today)?" component={() => (
                         <div className='today'>
                             <h1>Today's tasks</h1>
-                            <Today/>
+                            <Today />
                         </div>
                     )} />
                     <Route path="/dashboard/calendar" component={() => (
                         <div className='kalendar'>
                             <h1>Calendar</h1>
-                            <Kalendar/>
+                            <Kalendar />
                         </div>
                     )} />
                     <Route path="/dashboard/profile" component={() => (

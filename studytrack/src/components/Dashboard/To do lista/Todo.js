@@ -29,7 +29,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
                 {todo.text}
             </div>
             <div className="icons">
-                <CloseOutlined  onClick={() => removeTodo(todo.id)} className='delete-icon' />
+                <CloseOutlined onClick={() => removeTodo(todo.id)} className='delete-icon' />
                 <EditOutlined onClick={() => setEdit({ id: todo.id, value: todo.text })} className='edit-icon' />
             </div>
         </div >

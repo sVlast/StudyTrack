@@ -4,7 +4,7 @@ import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 import './AntForm.css';
-import {auth} from "../../util/firebase.js";
+import { auth } from "../../util/firebase.js";
 
 const HorizontalLoginForm = () => {
   const [form] = Form.useForm();
@@ -23,16 +23,16 @@ const HorizontalLoginForm = () => {
 
   const onFinish = (values) => {
     auth.signInWithEmailAndPassword(values.email, values.password)
-  .then((userCredential) => {
-    // Signed in
-    var user = userCredential.user;
-    history.push("/dashboard");
-    // ...
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-  });
+      .then((userCredential) => {
+        // Signed in
+        var user = userCredential.user;
+        history.push("/dashboard");
+        // ...
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+      });
 
   };
 
@@ -42,14 +42,14 @@ const HorizontalLoginForm = () => {
         name="email"
         rules={[
           {
-              type: 'email',
-              message: 'The input is not valid E-mail!',
+            type: 'email',
+            message: 'The input is not valid E-mail!',
           },
           {
-              required: true,
-              message: 'Please input your E-mail!',
+            required: true,
+            message: 'Please input your E-mail!',
           },
-      ]}
+        ]}
       >
         <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Email" />
       </Form.Item>

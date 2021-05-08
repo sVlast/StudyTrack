@@ -10,7 +10,7 @@ const RegisterModal = (props) => {
         props.changeVisibility(false);
         props.changeOther(true);
     }
-    
+
     return (
         <>
             <Button type="disabled" onClick={() => props.changeVisibility(true)}>
@@ -25,15 +25,15 @@ const RegisterModal = (props) => {
                 onCancel={() => props.changeVisibility(false)}
                 width={1000}
                 footer={[
-                    <p>Already have an account? Login <a className="registerlink" href="#" onClick={() =>{handleSwap()}}>here</a></p>,
-                    
+                    <p>Already have an account? Login <a className="registerlink" href="#" onClick={() => { handleSwap() }}>here</a></p>,
+
                 ]}
             >
                 <img src="/images/ST_Logo_white.png" alt="logo"></img>
                 <p>Register to StudyTrack</p>
                 <div className="regalign">
-                <RegistrationForm/>
-                </div>  
+                    <RegistrationForm />
+                </div>
             </StyledRegModal>
         </>
     );

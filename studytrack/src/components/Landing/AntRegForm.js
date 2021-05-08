@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { Form, Input, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
 import './AntRegForm.css';
 import styled from 'styled-components';
-import {auth} from "../../util/firebase.js";
+import { auth } from "../../util/firebase.js";
 
 
 const { Option } = Select;
@@ -34,7 +34,7 @@ const tailFormItemLayout = {
         },
         sm: {
             span: 24,
-            
+
         },
     },
 };
@@ -46,7 +46,7 @@ const btnFormItemLayout = {
         },
         sm: {
             span: 24,
-            offset:8,
+            offset: 8,
 
         },
     },
@@ -59,18 +59,18 @@ const RegistrationForm = () => {
 
     const onFinish = (values) => {
         auth.createUserWithEmailAndPassword(values.email, values.password)
-        .then((userCredential) => {
-          // Signed in 
-          const user = userCredential.user;
-          // ...
-          history.push("/dashboard");
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.log(error)
-          // ..
-        });
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                // ...
+                history.push("/dashboard");
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(error)
+                // ..
+            });
 
     };
     const StyledForm = styled(Form)`
