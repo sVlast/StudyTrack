@@ -1,19 +1,30 @@
 import React, { useState } from "react";
+import app,{auth} from "../../util/firebase.js";
+import {useHistory} from 'react-router-dom';
 import { Layout, Button } from "antd";
-import { MenuOutlined } from "@ant-design/icons";
 import "./NavBar.css";
 
 const { Header } = Layout;
 
 const NavBar = ({ menu }) => {
-    const [visible, setVisible] = useState(false);
+    const history = useHistory();
+
+    function handleLogOut() {
+        
+        auth.signOut().then(() => {
+            history.push("/");
+            console.log("User Sign Out");
+        });
+        
+    }
+    
     return (
         <Header className="navbar">
             <img src="/images/ST_Logo.png"></img>
             <Button
                 className="menu"
                 type="secondary"
-                onClick={() => setVisible(true)}
+                onClick={() => handleLogOut()}
             >
                 Log out
             </Button>            
