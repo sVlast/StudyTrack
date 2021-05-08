@@ -1,29 +1,23 @@
 import React, { useState } from "react";
-import { Drawer, Button } from "antd";
+import { Layout, Button } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import "./NavBar.css";
 
+const { Header } = Layout;
 
 const NavBar = ({ menu }) => {
     const [visible, setVisible] = useState(false);
     return (
-        <nav className="navbar">
+        <Header className="navbar">
+            <img src="/images/ST_Logo.png"></img>
             <Button
                 className="menu"
-                type="primary"
-                icon={<MenuOutlined />}
+                type="secondary"
                 onClick={() => setVisible(true)}
-            />
-            <Drawer
-                title="Topics"
-                placement="left"
-                onClick={() => setVisible(false)}
-                onClose={() => setVisible(false)}
-                visible={visible}
             >
-                {menu}
-            </Drawer>
-        </nav>
+                Log out
+            </Button>            
+        </Header>
     );
 };
 export default NavBar;

@@ -16,6 +16,9 @@ import {
     UserOutlined 
 } from '@ant-design/icons'
 
+
+const { Content } = Layout;
+
 function Dashboard() {
     //icons must same lenght as topics check
     const topics = ["today", "calendar", "todo", "profile"];
@@ -39,11 +42,11 @@ function Dashboard() {
 
     return (
         <div className="App">
-            <NavBar menu={Menu} />
-            <Layout>
-                <SideBar menu={Menu} />
-                <Layout.Content className="content">
-                    <Route path="/dashboard/today" component={() => (
+            <Layout className="layout">
+                 <NavBar menu={Menu} />
+                 <SideBar menu={Menu} />
+                 <Content className="content">
+                    <Route exact path="/dashboard/(today)?" component={() => (
                         <div className='today'>
                             <h1>Today's tasks</h1>
                             <Today/>
@@ -70,7 +73,7 @@ function Dashboard() {
                     )} />
 
 
-                </Layout.Content>
+                </Content>
             </Layout>
         </div>
     );
