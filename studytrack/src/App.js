@@ -55,7 +55,6 @@ function App() {
           <LandingPage />
         </Route>
         <Route path="/dashboard">
-          <Link to="/">Link</Link>
           <Dashboard />
         </Route>
 
