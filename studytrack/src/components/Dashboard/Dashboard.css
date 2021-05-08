@@ -1,51 +1,57 @@
-@import "~antd/dist/antd.css";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import '~antd/dist/antd.css';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 .App {
-    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 
 .content {
-    padding: 1rem;
+	padding: 1rem;
 }
 
 .events {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 .events .ant-badge-status {
-  width: 100%;
-  overflow: hidden;
-  font-size: 12px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+	width: 100%;
+	overflow: hidden;
+	font-size: 12px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 .notes-month {
-  font-size: 28px;
-  text-align: center;
+	font-size: 28px;
+	text-align: center;
 }
 .notes-month section {
-  font-size: 28px;
+	font-size: 28px;
 }
 
-.today, .profil, .todo-dash, .kalendar{
-  box-sizing: border-box;
-  margin: 0;
-  border-radius: 2px;
-  padding: 20px 20px 80px 20px;
-  background-color: #fff;
-  min-height: 60vh;
-  font-family: 'Roboto', sans-serif;
+.today,
+.profil,
+.todo-dash,
+.kalendar {
+	box-sizing: border-box;
+	margin: 0;
+	border-radius: 2px;
+	padding: 20px 20px 80px 20px;
+	background-color: #fff;
+	min-height: 60vh;
+	font-family: 'Roboto', sans-serif;
 }
 
-.profil>h1, .today>h1, .kalendar>h1, .todo-dash>h1{
-  font-weight: 300;
-  font-size: 36px;
-  text-align: left;
+.profil > h1,
+.today > h1,
+.kalendar > h1,
+.todo-dash > h1 {
+	font-weight: 300;
+	font-size: 36px;
+	text-align: left;
 }
-.profil h2{
-  font-weight: 300;
-  font-size: 30px;
-  text-align: left;
-  margin: 50px 0 30px 20px;
+.profil h2 {
+	font-weight: 300;
+	font-size: 30px;
+	text-align: left;
+	margin: 50px 0 30px 20px;
 }

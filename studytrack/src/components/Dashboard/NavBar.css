@@ -1,17 +1,16 @@
 .navbar {
-    background-color: white;
-    padding-left: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+	background-color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 0;
 }
 
-@media (min-width: 992px) {
-    .menu {
-        display: none;
-    }
+.navbar img {
+	height: 32px;
+	margin: 0 0 0 15px;
+	padding: 0;
 }
-
-.logo {
-    height: 32px;
-    margin-left: 1rem;
+.navbar Button {
+	margin-right: 10px;
 }

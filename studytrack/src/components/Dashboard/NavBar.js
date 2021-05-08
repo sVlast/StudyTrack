@@ -8,21 +8,14 @@ const NavBar = ({ menu }) => {
     const [visible, setVisible] = useState(false);
     return (
         <nav className="navbar">
+            <img src="/images/ST_Logo.png"></img>
             <Button
                 className="menu"
-                type="primary"
-                icon={<MenuOutlined />}
+                type="secondary"
                 onClick={() => setVisible(true)}
-            />
-            <Drawer
-                title="Topics"
-                placement="left"
-                onClick={() => setVisible(false)}
-                onClose={() => setVisible(false)}
-                visible={visible}
             >
-                {menu}
-            </Drawer>
+                Log out
+            </Button>
         </nav>
     );
 };
