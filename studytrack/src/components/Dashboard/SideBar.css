@@ -1,4 +1,12 @@
 .sidebar {
-    height: 100vh;
-    margin-right: 24px;
+	height: calc(100vh - 55px);
+	margin-right: 24px;
+	overflow: auto;
+	left: 0;
+	overflow: auto;
+	position: fixed;
+	top: 55px;
+}
+.sidebar.ant-layout-sider-collapsed + .content {
+	margin-left: 130px;
 }

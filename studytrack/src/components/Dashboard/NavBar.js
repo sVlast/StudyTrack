@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { Drawer, Button } from "antd";
+import { Layout, Button } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import "./NavBar.css";
 
+const { Header } = Layout;
 
 const NavBar = ({ menu }) => {
     const [visible, setVisible] = useState(false);
     return (
-        <nav className="navbar">
+        <Header className="navbar">
             <img src="/images/ST_Logo.png"></img>
             <Button
                 className="menu"
@@ -15,8 +16,8 @@ const NavBar = ({ menu }) => {
                 onClick={() => setVisible(true)}
             >
                 Log out
-            </Button>
-        </nav>
+            </Button>            
+        </Header>
     );
 };
 export default NavBar;
