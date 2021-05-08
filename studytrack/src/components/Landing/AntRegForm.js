@@ -58,13 +58,11 @@ const RegistrationForm = () => {
     const history = useHistory();
 
     const onFinish = (values) => {
-        console.log('Received values of form: ', values);
         auth.createUserWithEmailAndPassword(values.email, values.password)
         .then((userCredential) => {
           // Signed in 
           const user = userCredential.user;
           // ...
-          console.log("userCredential",userCredential);
           history.push("/dashboard");
         })
         .catch((error) => {

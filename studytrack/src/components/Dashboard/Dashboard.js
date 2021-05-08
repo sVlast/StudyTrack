@@ -20,6 +20,7 @@ import {
 const { Content } = Layout;
 
 function Dashboard() {
+    //icons must same lenght as topics check
     const topics = ["today", "calendar", "todo", "profile"];
     const icons = [<DashboardOutlined />,<CalendarOutlined />,<OrderedListOutlined />,<UserOutlined />]
     const history = useHistory();
