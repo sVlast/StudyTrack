@@ -36,7 +36,7 @@ const PasswordForm = () => {
         >
             <Form.Item
                 label="Old Password"
-                name="password"
+                name="old password"
                 rules={[
                     {
                         required: false,
@@ -49,7 +49,7 @@ const PasswordForm = () => {
 
             <Form.Item
                 label="New Password"
-                name="password"
+                name="new password"
                 rules={[
                     {
                         required: false,
@@ -61,7 +61,7 @@ const PasswordForm = () => {
             </Form.Item>
             <Form.Item
                 label="Confirm Password"
-                name="password"
+                name="confirm password"
                 rules={[
                     {
                         required: false,
