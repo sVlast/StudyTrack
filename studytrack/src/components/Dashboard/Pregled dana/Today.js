@@ -36,7 +36,7 @@ const data = [
 
 function Today(){
 
-    const [todos, setTodos] = useState([{id: 2971, text: "Srbija"}, {id: 29271, text: "Kosovo"}]);
+    const [todos, setTodos] = useState([{ id: 2971, text: "Your daily task #1" }, { id: 29271, text: "Your daily task #2" }, { id: 29241, text: "Your daily task #3" }]);
 
     const updateTodo = (todoId, newValue) => {
         if (!newValue.text || /^\s*$/.test(newValue.text)) {
@@ -79,7 +79,7 @@ function Today(){
             />    
             </div>
             <div className='todo-raspored'>
-            <h2>Danasnji zadatki</h2>
+            <h2>Daily tasks</h2>
              <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updateTodo={updateTodo} />
             </div>
         </div>
