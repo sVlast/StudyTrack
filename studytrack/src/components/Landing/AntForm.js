@@ -26,7 +26,6 @@ const HorizontalLoginForm = () => {
   .then((userCredential) => {
     // Signed in
     var user = userCredential.user;
-    console.log(userCredential);
     history.push("/dashboard");
     // ...
   })
@@ -35,9 +34,6 @@ const HorizontalLoginForm = () => {
     var errorMessage = error.message;
   });
 
-    
-    
-    console.log('Finish:', values);
   };
 
   return (
