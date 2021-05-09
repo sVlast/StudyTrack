@@ -25,6 +25,7 @@ function TodoList() {
             complete: false,
         };
         console.log(task);
+        //firebase write
         taskRef.push(task);
     };
 

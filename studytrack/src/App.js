@@ -1,49 +1,32 @@
 import firebase from './util/firebase';
+import React,{useState} from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 
 //Test components
 import Basicform from "./components/Basicform";
+import FunctionContext from './FunctionContext';
 import { Button } from 'antd';
+import useContext from 'react';
+import {ThemeProvider} from './ThemeContext.js';
 //Working components
 import Dashboard from './components/Dashboard/Dashboard.js';
 import LandingPage from './components/Landing/Landing.js';
 
 
+
 //test functions
 
-function handleLogOut()  {
-  firebase.auth().signOut().then(() => {
-    // Sign-out successful.
-    console.log("User logged out");
-  }).catch((error) => {
-    // An error happened.
-    console.log(error);
-  });
-}
-
-function handleLogState() {
-
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
-      var uid = user.uid;
-      // ...
-      console.log("User is logged in", uid);
-    } else {
-      // User is signed out
-      // ...
-      console.log("User is NOT logged in!");
-    }
-  })
-
-}
 
 //
 
 function App() {
+
+  //test 
+  
+  //
+
   return (
     <Router>
 
@@ -55,7 +38,11 @@ function App() {
         <Route path="/dashboard">
           <Dashboard />
         </Route>
-
+        <Route path ="/test">
+          <ThemeProvider >
+            <FunctionContext/>
+          </ThemeProvider>
+        </Route>
       </Switch>
     </Router>
   );

@@ -18,9 +18,25 @@ const app = firebase.initializeApp(firebaseConfig);
 
 export const auth = app.auth();
 
+
+
+//export const db = app.database().ref("users/"+auth.currentUser.uid);
+
+
+const tasks = app.database().ref("Task");
+tasks.get().then(snapshot => {
+  if (snapshot.exists()) {
+    console.log(snapshot.val());
+  } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
+
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
-    // User is signed in.
+    //User is signed in.
     // console.log(auth);
     // console.log(auth.currentUser);
     // console.log(user.uid);
