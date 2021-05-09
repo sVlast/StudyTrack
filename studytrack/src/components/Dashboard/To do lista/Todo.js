@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
-import TodoList from './TodoList'
 import TodoForm from './TodoForm'
-import { RiCloseCircleLine } from 'react-icons/ri'
-import { TiEdit } from 'react-icons/ti'
 import { EditOutlined, CloseOutlined } from '@ant-design/icons';
 
 function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
@@ -29,7 +26,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
                 {todo.text}
             </div>
             <div className="icons">
-                <CloseOutlined  onClick={() => removeTodo(todo.id)} className='delete-icon' />
+                <CloseOutlined onClick={() => removeTodo(todo.id)} className='delete-icon' />
                 <EditOutlined onClick={() => setEdit({ id: todo.id, value: todo.text })} className='edit-icon' />
             </div>
         </div >

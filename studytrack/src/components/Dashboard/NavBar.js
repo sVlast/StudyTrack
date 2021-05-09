@@ -27,7 +27,7 @@ const NavBar = ({ menu }) => {
                 onClick={() => handleLogOut()}
             >
                 Log out
-            </Button>            
+            </Button>
         </Header>
     );
 };

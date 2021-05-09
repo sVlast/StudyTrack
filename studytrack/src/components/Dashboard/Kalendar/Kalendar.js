@@ -63,8 +63,8 @@ function monthCellRender(value) {
 
 
 
-function Kalendar(){
-    return(
+function Kalendar() {
+    return (
         <Calendar dateCellRender={dateCellRender} monthCellRender={monthCellRender} />
     )
 }

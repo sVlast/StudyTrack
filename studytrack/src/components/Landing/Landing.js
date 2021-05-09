@@ -5,8 +5,8 @@ import Header from './Header.js';
 function LandingPage() {
     return (
         <>
-            <Header/>
-            <Content/>
+            <Header />
+            <Content />
         </>
     );
 }

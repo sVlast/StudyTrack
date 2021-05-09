@@ -1,7 +1,7 @@
 import React from "react";
 import { Menu } from "antd";
 
-const TopicMenu = ({ topics, selectedKey, changeSelectedKey,icons }) => {
+const TopicMenu = ({ topics, selectedKey, changeSelectedKey, icons }) => {
     const styledTopics = [];
 
     function toUpperFirst(string) {

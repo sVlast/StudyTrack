@@ -3,8 +3,8 @@ import PasswordForm from './PasswordForm.js';
 import UsernameForm from './UsernameForm.js';
 
 
-function Profil(){
-    return(
+function Profil() {
+    return (
         <div className="profil-content">
             <div className="user-content">
                 <h2>Account information</h2>

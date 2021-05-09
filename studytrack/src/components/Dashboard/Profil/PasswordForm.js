@@ -44,7 +44,7 @@ const PasswordForm = () => {
                     },
                 ]}
             >
-                <Input defaultValue="Password" type="password"/>
+                <Input defaultValue="Password" type="password" />
             </Form.Item>
 
             <Form.Item

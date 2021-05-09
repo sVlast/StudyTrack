@@ -62,14 +62,14 @@ function TodoForm(props) {
                 </>
             ) : (
                 <>
-                        <Space className='date-space' direction="vertical" size={12}>
-                            <RangePicker
-                                showTime={{ format: 'HH:mm' }}
-                                format="MM-DD HH:mm"
-                                onChange={onChange}
-                                onOk={onOk}
-                            />
-                        </Space>
+                    <Space className='date-space' direction="vertical" size={12}>
+                        <RangePicker
+                            showTime={{ format: 'HH:mm' }}
+                            format="MM-DD HH:mm"
+                            onChange={onChange}
+                            onOk={onOk}
+                        />
+                    </Space>
                     <input
                         type="text"
                         placeholder="Add a task"

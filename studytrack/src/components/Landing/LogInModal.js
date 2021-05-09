@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from 'antd';
 import HorizontalLoginForm from './AntForm';
 import { StyledLogModal } from './ModalStyle';
@@ -26,13 +26,13 @@ const LogInModal = (props) => {
                 width={1000}
                 footer={[
                     <p>Don't have an account?</p>,
-                    <Button type="normal" onClick={()=>{handleSwap()}}>Register</Button>
+                    <Button type="normal" onClick={() => { handleSwap() }}>Register</Button>
                 ]}
             >
                 <img src="/images/ST_Logo.png" alt="logo"></img>
                 <p>Welcome to StudyTrack</p>
                 <p>Log in</p>
-                <HorizontalLoginForm className='modal-login-form'/>
+                <HorizontalLoginForm className='modal-login-form' />
                 <a href="#" className="forgot-pass" >Forgot password?</a>
             </StyledLogModal>
         </>
