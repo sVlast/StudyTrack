@@ -1,28 +1,30 @@
-import React, { useState } from 'react'
-import firebase from "../../../util/firebase.js"
-import Todo from './Todo';
-import TodoForm from './TodoForm'
-import './TodoList.css'
+import React, { useState } from "react";
+import firebase from "../../../util/firebase.js";
+import Todo from "./Todo";
+import TodoForm from "./TodoForm";
+import "./TodoList.css";
 
 function TodoList() {
     const [todos, setTodos] = useState([]);
 
-    const taskRef = firebase.database().ref("Task")
+    const taskRef = firebase.database().ref("/Task");
 
-    const addTodo = todo => {
+    const addTodo = (todo) => {
         if (!todo.text || /^\s*$/.test(todo.text)) {
-            return
+            return;
         }
 
-    console.log(todo)
+        console.log(todo);
 
-        const newTodos = [todo, ...todos]
+        const newTodos = [todo, ...todos];
 
-        setTodos(newTodos)
+        setTodos(newTodos);
+
         const task = {
-            id:todo.id,
-            description:todo.text,
+            id: todo.id,
+            description: todo.text,
             complete: false,
+            userid: "",
         };
         console.log(task);
         //firebase write
@@ -34,33 +36,39 @@ function TodoList() {
             return;
         }
 
-        setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
-    }
+        setTodos((prev) =>
+            prev.map((item) => (item.id === todoId ? newValue : item))
+        );
+    };
 
-
-    const removeTodo = id => {
-        const removeArr = [...todos].filter(todo => todo.id !== id)
+    const removeTodo = (id) => {
+        const removeArr = [...todos].filter((todo) => todo.id !== id);
 
         setTodos(removeArr);
     };
 
-    const completeTodo = id => {
-        let updatedTodos = todos.map(todo => {
+    const completeTodo = (id) => {
+        let updatedTodos = todos.map((todo) => {
             if (todo.id === id) {
                 todo.isComplete = !todo.isComplete;
             }
             return todo;
-        })
+        });
         setTodos(updatedTodos);
     };
 
     return (
-        <div className='todolist'>
+        <div className="todolist">
             <h2>Add a task</h2>
             <TodoForm onSubmit={addTodo} />
-            <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updateTodo={updateTodo} />
+            <Todo
+                todos={todos}
+                completeTodo={completeTodo}
+                removeTodo={removeTodo}
+                updateTodo={updateTodo}
+            />
         </div>
-    )
+    );
 }
 
-export default TodoList
+export default TodoList;
