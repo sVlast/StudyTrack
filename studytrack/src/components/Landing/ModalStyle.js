@@ -1,4 +1,4 @@
-import { Modal } from 'antd';
+import { Modal, Form } from 'antd';
 import styled from 'styled-components';
 
 export const StyledLogModal = styled(Modal)`
@@ -143,3 +143,22 @@ export const StyledRegModal = styled(Modal)`
             color:#fff;
         }
     `;
+
+export const StyledLogForm = styled(Form)`
+  .ant-form-inline{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+`;
+
+export const StyledRegForm = styled(Form)`
+            .ant-row{
+                margin-bottom: 0;
+            }
+
+            .ant-row:last-of-type{
+                margin-top: 20px;
+            }
+
+        `;

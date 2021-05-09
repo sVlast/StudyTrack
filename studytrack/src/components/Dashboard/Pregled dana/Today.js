@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { List, Card } from 'antd';
-import TodoList from '../To do lista/TodoList';
 import './Today.css';
 import Todo from '../To do lista/Todo';
 

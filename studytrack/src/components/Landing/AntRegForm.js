@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from "react-router-dom";
-import { Form, Input, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
+import { Form, Input, Button, } from 'antd';
 import './AntRegForm.css';
-import styled from 'styled-components';
 import { auth } from "../../util/firebase.js";
+import { StyledRegForm } from './ModalStyle';
 
-
-const { Option } = Select;
 
 const formItemLayout = {
     labelCol: {
@@ -26,18 +24,7 @@ const formItemLayout = {
         },
     },
 };
-const tailFormItemLayout = {
-    wrapperCol: {
-        xs: {
-            span: 24,
-            offset: 0,
-        },
-        sm: {
-            span: 24,
 
-        },
-    },
-};
 const btnFormItemLayout = {
     wrapperCol: {
         xs: {
@@ -73,19 +60,10 @@ const RegistrationForm = () => {
             });
 
     };
-    const StyledForm = styled(Form)`
-            .ant-row{
-                margin-bottom: 0;
-            }
 
-            .ant-row:last-of-type{
-                margin-top: 20px;
-            }
-
-        `;
 
     return (
-        <StyledForm
+        <StyledRegForm
             {...formItemLayout}
             form={form}
             name="register"
@@ -150,42 +128,12 @@ const RegistrationForm = () => {
                 <Input.Password />
             </Form.Item>
 
-            {/* <Form.Item
-                name="username"
-                label="Username"
-                tooltip="What do you want others to call you?"
-                rules={[
-                    {
-                        required: true,
-                        message: 'Please input your username!',
-                        whitespace: true,
-                    },
-                ]}
-            >
-                <Input />
-            </Form.Item> */}
-
-            {/* <Form.Item
-                name="agreement"
-                valuePropName="checked"
-                rules={[
-                    {
-                        validator: (_, value) =>
-                            value ? Promise.resolve() : Promise.reject(new Error('Should accept agreement')),
-                    },
-                ]}
-                {...tailFormItemLayout}
-            >
-                <Checkbox id="regcheck" style={{ color: "#fff" }}>
-                    I have read the <a href="" style={{ color: "#fff" }}>agreement</a>
-                </Checkbox>
-            </Form.Item> */}
             <Form.Item {...btnFormItemLayout}>
                 <Button type="normal" htmlType="submit">
                     Register
         </Button>
             </Form.Item>
-        </StyledForm>
+        </StyledRegForm>
     );
 };
 

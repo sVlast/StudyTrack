@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
-import TodoList from './TodoList'
 import TodoForm from './TodoForm'
-import { RiCloseCircleLine } from 'react-icons/ri'
-import { TiEdit } from 'react-icons/ti'
 import { EditOutlined, CloseOutlined } from '@ant-design/icons';
 
 function Todo({ todos, completeTodo, removeTodo, updateTodo }) {

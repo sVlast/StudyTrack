@@ -2,21 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import styled from 'styled-components';
 import './AntForm.css';
 import { auth } from "../../util/firebase.js";
+import { StyledLogForm } from './ModalStyle';
 
 const HorizontalLoginForm = () => {
   const [form] = Form.useForm();
   const [, forceUpdate] = useState({}); // To disable submit button at the beginning.
   const history = useHistory();
-  const StyledForm = styled(Form)`
-  .ant-form-inline{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content:center;
-}
-`;
+
   useEffect(() => {
     forceUpdate({});
   }, []);
@@ -37,7 +31,7 @@ const HorizontalLoginForm = () => {
   };
 
   return (
-    <StyledForm form={form} name="horizontal_login" layout="inline" alignment="center-align" onFinish={onFinish}>
+    <StyledLogForm form={form} name="horizontal_login" layout="inline" alignment="center-align" onFinish={onFinish}>
       <Form.Item
         name="email"
         rules={[
@@ -82,7 +76,7 @@ const HorizontalLoginForm = () => {
           </Button>
         )}
       </Form.Item>
-    </StyledForm>
+    </StyledLogForm>
   );
 };
 
