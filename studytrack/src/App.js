@@ -13,7 +13,7 @@ import LandingPage from './components/Landing/Landing.js';
 
 //test functions
 
-function handleLogOut()  {
+function handleLogOut() {
   firebase.auth().signOut().then(() => {
     // Sign-out successful.
     console.log("User logged out");

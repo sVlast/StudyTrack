@@ -44,7 +44,7 @@ const UsernameForm = () => {
                     },
                 ]}
             >
-                <Input defaultValue="Username"/>
+                <Input defaultValue="Username" />
             </Form.Item>
 
             <Form.Item

@@ -1,23 +1,23 @@
 .navbar {
-	background-color: white;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 10px 0;
-	position: fixed;
-	z-index: 1000;
-	width: 100%;
-	left: 0;
-	top: 0;
-	right: 0;
-	height: 55px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 55px;
 }
 
 .navbar img {
-	height: 32px;
-	margin: 0 0 0 15px;
-	padding: 0;
+  height: 32px;
+  margin: 0 0 0 15px;
+  padding: 0;
 }
 .navbar Button {
-	margin-right: 10px;
+  margin-right: 10px;
 }

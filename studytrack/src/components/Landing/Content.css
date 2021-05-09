@@ -1,72 +1,70 @@
-.bannerleft{
-    width:50%;
-    display: flex;
+.bannerleft {
+  width: 50%;
+  display: flex;
 }
-.bannerleft>img{
-    max-width: 639px;
-    width: 100%;
+.bannerleft > img {
+  max-width: 639px;
+  width: 100%;
 }
-.bannerright{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-}
-
-.banner{
-    display: flex;
-    flex-direction: row;
-    margin: 0 auto;
-    width: 80%;
-    user-select: none;
+.bannerright {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
-.bannerright>p{
-    font-family: 'Roboto', sans-serif;
-    font-size: 72px;
-    font-weight: 300;
-    margin: 0;
-    line-height: 110%;
-    
+.banner {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 80%;
+  user-select: none;
 }
 
-#blue{
-    color: #1890FF;
-    margin-bottom: 50px;
+.bannerright > p {
+  font-family: "Roboto", sans-serif;
+  font-size: 72px;
+  font-weight: 300;
+  margin: 0;
+  line-height: 110%;
 }
 
-.bannerright>button{
-    width:200px;
-    height: 50px;
-    font-size: 20px;
+#blue {
+  color: #1890ff;
+  margin-bottom: 50px;
 }
 
-
-.BlueContent{
-    background-color: #1890FF;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
+.bannerright > button {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
 }
 
-.BlueContent>p{
-    font-family: 'Roboto', sans-serif;
-    font-size: 42px;
-    font-weight: 300;
-    margin: 0;
-    color: #fff;
-    width: fit-content;
+.BlueContent {
+  background-color: #1890ff;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
-.BlueContent>button{
-    width:200px;
-    height: 50px;
-    font-size: 20px;
-    margin-top: 20px;
+.BlueContent > p {
+  font-family: "Roboto", sans-serif;
+  font-size: 42px;
+  font-weight: 300;
+  margin: 0;
+  color: #fff;
+  width: fit-content;
+}
+
+.BlueContent > button {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  margin-top: 20px;
 }
