@@ -85,8 +85,8 @@ function Dashboard() {
                         path="/dashboard/todo"
                         component={() => (
                             <div className="todo-dash">
-                                <h1>To do list{userID}</h1>
-                                <TodoList value={userID} />
+                                <h1>To do list</h1>
+                                <TodoList />
                             </div>
                         )}
                     />

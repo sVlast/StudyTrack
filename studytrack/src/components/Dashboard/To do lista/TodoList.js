@@ -3,19 +3,17 @@ import firebase from "../../../util/firebase.js";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 import "./TodoList.css";
-import useDatabaseContext from "../../../contexts/DatabaseContext.js";
+import { useDatabaseContext } from "../../../contexts/DatabaseContext.js";
 
-function TodoList(props) {
+function TodoList() {
     const [todos, setTodos] = useState([]);
     const taskRef = firebase.database().ref("Task");
-    //const userID = useDatabaseContext();
+    const userID = useDatabaseContext();
 
     const addTodo = (todo) => {
         if (!todo.text || /^\s*$/.test(todo.text)) {
             return;
         }
-
-        console.log(todo);
 
         const newTodos = [todo, ...todos];
 
@@ -25,9 +23,8 @@ function TodoList(props) {
             id: todo.id,
             description: todo.text,
             complete: false,
-            userid: props.value,
+            userid: userID,
         };
-        console.log(task);
         //firebase write
         //taskRef.push(task);
     };

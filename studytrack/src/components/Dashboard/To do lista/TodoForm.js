@@ -1,48 +1,52 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Button, DatePicker, Space } from 'antd';
+import React, { useState, useEffect, useRef } from "react";
+import { Button, DatePicker, Space } from "antd";
 
 const { RangePicker } = DatePicker;
 
 function onChange(value, dateString) {
-    console.log('Selected Time: ', value);
-    console.log('Formatted Selected Time: ', dateString);
+    console.log("Selected Time: ", value);
+    console.log("Formatted Selected Time: ", dateString);
 }
 
 function onOk(value) {
-    console.log('onOk: ', value);
+    console.log("onOk: ", value);
 }
 
 function TodoForm(props) {
-    const [input, setInput] = useState(props.edit ? props.edit.value : '');
+    const [input, setInput] = useState(props.edit ? props.edit.value : "");
 
-    const inputRef = useRef(null)
+    const inputRef = useRef(null);
 
     useEffect(() => {
-        inputRef.current.focus()
-    })
+        inputRef.current.focus();
+    });
 
-    const handleChange = e => {
+    const handleChange = (e) => {
         setInput(e.target.value);
     };
 
-    const handleSubmit = e => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-
+        console.log(e);
         props.onSubmit({
             id: Math.floor(Math.random() * 10000),
-            text: input
+            text: input,
         });
 
-        setInput('')
-    }
+        setInput("");
+    };
 
     return (
-        <form className='todo-form' onSubmit={handleSubmit}>
+        <form className="todo-form" onSubmit={handleSubmit}>
             {props.edit ? (
                 <>
-                    <Space className='date-space' direction="vertical" size={12}>
+                    <Space
+                        className="date-space"
+                        direction="vertical"
+                        size={12}
+                    >
                         <RangePicker
-                            showTime={{ format: 'HH:mm' }}
+                            showTime={{ format: "HH:mm" }}
                             format="MM-DD HH:mm"
                             onChange={onChange}
                             onOk={onOk}
@@ -56,15 +60,21 @@ function TodoForm(props) {
                         className="todo-input edit"
                         onChange={handleChange}
                         ref={inputRef}
-                        autoComplete='off'
+                        autoComplete="off"
                     />
-                    <Button type="secondary" htmlType="submit">Update</Button>
+                    <Button type="secondary" htmlType="submit">
+                        Update
+                    </Button>
                 </>
             ) : (
                 <>
-                    <Space className='date-space' direction="vertical" size={12}>
+                    <Space
+                        className="date-space"
+                        direction="vertical"
+                        size={12}
+                    >
                         <RangePicker
-                            showTime={{ format: 'HH:mm' }}
+                            showTime={{ format: "HH:mm" }}
                             format="MM-DD HH:mm"
                             onChange={onChange}
                             onOk={onOk}
@@ -78,16 +88,15 @@ function TodoForm(props) {
                         className="todo-input"
                         onChange={handleChange}
                         ref={inputRef}
-                        autoComplete='off'
+                        autoComplete="off"
                     />
-                    <Button type="primary" htmlType="submit">Add todo</Button>
+                    <Button type="primary" htmlType="submit">
+                        Add todo
+                    </Button>
                 </>
-            )
-
-            }
-
+            )}
         </form>
-    )
+    );
 }
 
-export default TodoForm
+export default TodoForm;
