@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import firebase from "../../../util/firebase.js";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
@@ -9,6 +9,31 @@ function TodoList() {
     const [todos, setTodos] = useState([]);
     const taskRef = firebase.database().ref("Task");
     const userID = useDatabaseContext();
+
+
+    useEffect(() => {
+        taskRef
+            .get()
+            .then((snapshot) => {
+                if (snapshot.exists()) {
+                    console.log(snapshot);
+                    const tasks = snapshot.val();
+                    const taskList = [];
+                    for (let id in tasks) {
+                        taskList.push(tasks[id]);
+                    }
+                    setTodos(taskList);
+                    console.log(tasks);
+                    console.log(taskList);
+                } else {
+                    console.log("No data available");
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
+
 
     const addTodo = (todo) => {
         if (!todo.title || /^\s*$/.test(todo.title)) {
