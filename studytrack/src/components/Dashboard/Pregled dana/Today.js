@@ -34,8 +34,7 @@ const data = [
 const taskRef = firebase.database().ref("Task");
 
 function Today() {
-    const [todos, setTodos] = useState([
-    ]);
+    const [todos, setTodos] = useState([]);
 
     useEffect(() => {
         taskRef
@@ -46,7 +45,7 @@ function Today() {
                     const tasks = snapshot.val();
                     const taskList = [];
                     for (let id in tasks) {
-                        taskList.push(tasks[id]);
+                        taskList.push({ id, ...tasks[id] });
                     }
                     setTodos(taskList);
                     console.log(tasks);
@@ -72,8 +71,8 @@ function Today() {
 
     const removeTodo = (id) => {
         const removeArr = [...todos].filter((todo) => todo.id !== id);
-
         setTodos(removeArr);
+        taskRef.child(id).remove();
     };
 
     const completeTodo = (id) => {

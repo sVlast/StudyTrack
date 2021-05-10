@@ -13,7 +13,7 @@ function TodoList() {
             const tasks = snapshot.val();
             const taskList = [];
             for (let id in tasks) {
-                taskList.unshift(tasks[id]);
+                taskList.unshift({ id, ...tasks[id] });
             }
             setTodos(taskList);
             console.log(tasks);
@@ -21,7 +21,7 @@ function TodoList() {
         });
 
         return () => taskRef.off();
-    }, [todos]);
+    }, []);
 
     const addTodo = (todo) => {
         if (!todo.title || /^\s*$/.test(todo.title)) {
@@ -47,9 +47,9 @@ function TodoList() {
     };
 
     const removeTodo = (id) => {
-        const removeArr = [...todos].filter((todo) => todo.id !== id);
-
-        setTodos(removeArr);
+        //const removeArr = [...todos].filter((todo) => todo.id !== id);
+        //setTodos(removeArr);
+        taskRef.child(id).remove();
     };
 
     const completeTodo = (id) => {
