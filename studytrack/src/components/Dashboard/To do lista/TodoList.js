@@ -11,7 +11,7 @@ function TodoList() {
     const userID = useDatabaseContext();
 
     const addTodo = (todo) => {
-        if (!todo.text || /^\s*$/.test(todo.text)) {
+        if (!todo.title || /^\s*$/.test(todo.title)) {
             return;
         }
 
@@ -19,18 +19,12 @@ function TodoList() {
 
         setTodos(newTodos);
 
-        const task = {
-            id: todo.id,
-            description: todo.text,
-            complete: false,
-            userid: userID,
-        };
         //firebase write
-        //taskRef.push(task);
+        taskRef.push(todo);
     };
 
     const updateTodo = (todoId, newValue) => {
-        if (!newValue.text || /^\s*$/.test(newValue.text)) {
+        if (!newValue.title || /^\s*$/.test(newValue.title)) {
             return;
         }
 
@@ -48,7 +42,7 @@ function TodoList() {
     const completeTodo = (id) => {
         let updatedTodos = todos.map((todo) => {
             if (todo.id === id) {
-                todo.isComplete = !todo.isComplete;
+                todo.complete = !todo.complete;
             }
             return todo;
         });

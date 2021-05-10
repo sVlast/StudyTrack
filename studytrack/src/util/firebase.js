@@ -34,16 +34,16 @@ export const auth = app.auth();
 //         console.error(error);
 //     });
 
-firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-        //User is signed in.
-        // console.log(auth);
-        // console.log(auth.currentUser);
-        //console.log(user.uid);
-        // console.log(auth.currentUser.uid);
-    } else {
-        // No user is signed in.
-    }
-});
+// firebase.auth().onAuthStateChanged(function (user) {
+//     if (user) {
+//         //User is signed in.
+//         console.log(auth);
+//         console.log(auth.currentUser);
+//         console.log(user.uid);
+//         console.log(auth.currentUser.uid);
+//     } else {
+//         //No user is signed in.
+//     }
+// });
 
 export default app;

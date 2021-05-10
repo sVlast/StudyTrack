@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import firebase from "../../../util/firebase.js";
 import { List, Card } from "antd";
 import "./Today.css";
 import Todo from "../To do lista/Todo";
@@ -36,12 +37,37 @@ const data = [
     },
 ];
 
+const taskRef = firebase.database().ref("Task");
+
 function Today() {
     const [todos, setTodos] = useState([
-        { id: 2971, text: "Your daily task #1" },
-        { id: 29271, text: "Your daily task #2" },
-        { id: 29241, text: "Your daily task #3" },
+        { id: 2971, title: "Your daily task #1" },
+        { id: 29271, title: "Your daily task #2" },
+        { id: 29241, title: "Your daily task #3" },
     ]);
+
+    useEffect(() => {
+        taskRef
+            .get()
+            .then((snapshot) => {
+                if (snapshot.exists()) {
+                    console.log(snapshot);
+                    const tasks = snapshot.val();
+                    const taskList = [];
+                    for (let id in tasks) {
+                        taskList.push(tasks[id]);
+                    }
+                    setTodos(taskList);
+                    console.log(tasks);
+                    console.log(taskList);
+                } else {
+                    console.log("No data available");
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
 
     const updateTodo = (todoId, newValue) => {
         if (!newValue.text || /^\s*$/.test(newValue.text)) {
@@ -62,7 +88,7 @@ function Today() {
     const completeTodo = (id) => {
         let updatedTodos = todos.map((todo) => {
             if (todo.id === id) {
-                todo.isComplete = !todo.isComplete;
+                todo.complete = !todo.complete;
             }
             return todo;
         });

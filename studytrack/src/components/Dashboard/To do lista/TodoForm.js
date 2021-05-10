@@ -30,7 +30,13 @@ function TodoForm(props) {
         console.log(e);
         props.onSubmit({
             id: Math.floor(Math.random() * 10000),
-            text: input,
+            title: input,
+            description: "",
+            type: "",
+            complete: false,
+            startTime: "",
+            endTime: "",
+            userid: "",
         });
 
         setInput("");
