@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useDatabaseContext } from "../../../contexts/DatabaseContext.js";
 import { Button, DatePicker, Space } from "antd";
 
 const { RangePicker } = DatePicker;
@@ -14,7 +15,7 @@ function onOk(value) {
 
 function TodoForm(props) {
     const [input, setInput] = useState(props.edit ? props.edit.value : "");
-
+    const userID = useDatabaseContext();
     const inputRef = useRef(null);
 
     useEffect(() => {
@@ -36,7 +37,7 @@ function TodoForm(props) {
             complete: false,
             startTime: "",
             endTime: "",
-            userid: "",
+            userid: userID,
         });
 
         setInput("");

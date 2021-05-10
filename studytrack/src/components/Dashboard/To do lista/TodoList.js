@@ -3,12 +3,10 @@ import firebase from "../../../util/firebase.js";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 import "./TodoList.css";
-import { useDatabaseContext } from "../../../contexts/DatabaseContext.js";
 
 function TodoList() {
     const [todos, setTodos] = useState([]);
     const taskRef = firebase.database().ref("Task");
-    const userID = useDatabaseContext();
 
 
     useEffect(() => {
