@@ -16,8 +16,8 @@ function TodoList() {
                 taskList.unshift({ id, ...tasks[id] });
             }
             setTodos(taskList);
-            console.log(tasks);
-            console.log(taskList);
+            //console.log(tasks);
+            //console.log(taskList);
         });
 
         return () => taskRef.off();
