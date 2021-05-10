@@ -6,34 +6,28 @@ import Todo from "../To do lista/Todo";
 
 const data = [
     {
-        title: "Title 1",
-        startTime: 11,
-        endTime: 12,
-        type: "Geografija",
+        title: "Dizajn digitalnih proizvoda",
+        startTime: 9,
+        endTime: 10,
+        type: "Predavanje",
     },
     {
-        title: "Title 2",
-        startTime: 11,
-        endTime: 12,
-        type: "Geografija",
+        title: "Digitalna fotografija",
+        startTime: 14,
+        endTime: 15,
+        type: "Laboratorijske vježbe",
     },
     {
-        title: "Title 3",
-        startTime: 11,
-        endTime: 12,
-        type: "Geografija",
+        title: "Digitalna slika",
+        startTime: 16,
+        endTime: 17,
+        type: "Laboratorijske vježbe",
     },
     {
-        title: "Title 4",
-        startTime: 11,
-        endTime: 12,
-        type: "Ayylmao",
-    },
-    {
-        title: "Title 234",
-        startTime: 21,
-        endTime: 20,
-        type: "Geografija",
+        title: "XML programiranje",
+        startTime: 18,
+        endTime: 19,
+        type: "Predavanje",
     },
 ];
 
