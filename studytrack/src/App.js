@@ -24,7 +24,7 @@ function App() {
         <Router>
             <Switch>
                 <Route exact path="/">
-                    <Link to="/dashboard">Link</Link>
+                    {/* <Link to="/dashboard">Link</Link> */}
                     <LandingPage />
                 </Route>
                 <Route path="/dashboard">
