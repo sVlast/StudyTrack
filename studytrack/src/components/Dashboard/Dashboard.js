@@ -81,7 +81,6 @@ function Dashboard() {
                             </div>
                         )}
                     />
-                    2
                     <Route
                         path="/dashboard/todo"
                         component={() => (
