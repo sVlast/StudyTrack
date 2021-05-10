@@ -10,7 +10,6 @@ const formattedEntries = () =>
     }));
 
 const getListData = (value) => {
-    console.log(formattedEntries())
     const date = value.format('DD/MM/YYYY');
     const entriesByCurrentDate = formattedEntries().filter((item) => item.dtstart === date);
 
