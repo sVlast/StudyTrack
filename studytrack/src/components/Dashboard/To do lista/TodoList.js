@@ -41,9 +41,13 @@ function TodoList() {
             return;
         }
 
-        setTodos((prev) =>
-            prev.map((item) => (item.id === todoId ? newValue : item))
-        );
+        //console.log("id:", todoId, "val:", newValue);
+
+        taskRef.child(todoId).update(newValue);
+
+        // setTodos((prev) =>
+        //     prev.map((item) => (item.id === todoId ? newValue : item))
+        // );
     };
 
     const removeTodo = (id) => {
@@ -55,11 +59,12 @@ function TodoList() {
     const completeTodo = (id) => {
         let updatedTodos = todos.map((todo) => {
             if (todo.id === id) {
-                todo.complete = !todo.complete;
+                //todo.complete = !todo.complete;
+                taskRef.child(id).update({ complete: !todo.complete });
             }
             return todo;
         });
-        setTodos(updatedTodos);
+        //setTodos(updatedTodos);
     };
 
     return (

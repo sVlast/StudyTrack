@@ -37,52 +37,68 @@ function Today() {
     const [todos, setTodos] = useState([]);
 
     useEffect(() => {
-        taskRef
-            .get()
-            .then((snapshot) => {
-                if (snapshot.exists()) {
-                    console.log(snapshot);
-                    const tasks = snapshot.val();
-                    const taskList = [];
-                    for (let id in tasks) {
-                        taskList.push({ id, ...tasks[id] });
-                    }
-                    setTodos(taskList);
-                    console.log(tasks);
-                    console.log(taskList);
-                } else {
-                    console.log("No data available");
-                }
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        // taskRef
+        //     .get()
+        //     .then((snapshot) => {
+        //         if (snapshot.exists()) {
+        //             console.log(snapshot);
+        //             const tasks = snapshot.val();
+        //             const taskList = [];
+        //             for (let id in tasks) {
+        //                 taskList.push({ id, ...tasks[id] });
+        //             }
+        //             setTodos(taskList);
+        //             console.log(tasks);
+        //             console.log(taskList);
+        //         } else {
+        //             console.log("No data available");
+        //         }
+        //     })
+        //     .catch((error) => {
+        //         console.log(error);
+        //     });
+        taskRef.on("value", (snapshot) => {
+            const tasks = snapshot.val();
+            const taskList = [];
+            for (let id in tasks) {
+                taskList.push({ id, ...tasks[id] });
+            }
+            setTodos(taskList);
+            console.log(tasks);
+            console.log(taskList);
+        });
+
+        return () => taskRef.off();
     }, []);
 
     const updateTodo = (todoId, newValue) => {
-        if (!newValue.text || /^\s*$/.test(newValue.text)) {
+        if (!newValue.title || /^\s*$/.test(newValue.title)) {
             return;
         }
 
-        setTodos((prev) =>
-            prev.map((item) => (item.id === todoId ? newValue : item))
-        );
+        taskRef.child(todoId).update(newValue);
+        //console.log("id:", todoId, "val:", newValue);
+
+        // setTodos((prev) =>
+        //     prev.map((item) => (item.id === todoId ? newValue : item))
+        // );
     };
 
     const removeTodo = (id) => {
-        const removeArr = [...todos].filter((todo) => todo.id !== id);
-        setTodos(removeArr);
+        //const removeArr = [...todos].filter((todo) => todo.id !== id);
+        //setTodos(removeArr);
         taskRef.child(id).remove();
     };
 
     const completeTodo = (id) => {
         let updatedTodos = todos.map((todo) => {
             if (todo.id === id) {
-                todo.complete = !todo.complete;
+                //todo.complete = !todo.complete;
+                taskRef.child(id).update({ complete: !todo.complete });
             }
             return todo;
         });
-        setTodos(updatedTodos);
+        //setTodos(updatedTodos);
     };
 
     return (
