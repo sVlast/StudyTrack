@@ -35,9 +35,6 @@ const taskRef = firebase.database().ref("Task");
 
 function Today() {
     const [todos, setTodos] = useState([
-        { id: 2971, title: "Your daily task #1" },
-        { id: 29271, title: "Your daily task #2" },
-        { id: 29241, title: "Your daily task #3" },
     ]);
 
     useEffect(() => {
