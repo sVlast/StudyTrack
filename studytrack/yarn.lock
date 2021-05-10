@@ -10732,7 +10732,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"moment@npm:^2.24.0, moment@npm:^2.25.3":
+"moment@npm:^2.24.0, moment@npm:^2.25.3, moment@npm:^2.29.1":
   version: 2.29.1
   resolution: "moment@npm:2.29.1"
   checksum: 86729013febf7160de5b93da69273dd304d674b0224f9544b3abd09a87671ddd2cdd57598261ce57588910d63747ffd5590965e83c790d8bf327083c0e0a06e0
@@ -15403,6 +15403,7 @@ resolve@1.18.1:
     antd: ^4.15.1
     eslint-config-react-app: ^6.0.0
     firebase: ^8.4.1
+    moment: ^2.29.1
     react: ^17.0.2
     react-dom: ^17.0.2
     react-firebase-hooks: ^3.0.3

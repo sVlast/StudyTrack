@@ -1,43 +1,32 @@
 import React from 'react';
 import { Calendar, Badge } from "antd";
+import calendar from './calendar.json';
+import moment from 'moment';
 
-function getListData(value) {
-    let listData;
-    switch (value.date()) {
-        case 8:
-            listData = [
-                { type: 'warning', content: 'This is warning event.' },
-                { type: 'success', content: 'This is usual event.' },
-            ];
-            break;
-        case 10:
-            listData = [
-                { type: 'warning', content: 'This is warning event.' },
-                { type: 'success', content: 'This is usual event.' },
-                { type: 'success', content: 'This is error event.' },
-            ];
-            break;
-        case 15:
-            listData = [
-                { type: 'warning', content: 'This is warning event' },
-                { type: 'success', content: 'This is very long usual event。。....' },
-                { type: 'success', content: 'This is error event 1.' },
-                { type: 'success', content: 'This is error event 2.' },
-                { type: 'success', content: 'This is error event 3.' },
-                { type: 'success', content: 'This is error event 4.' },
-            ];
-            break;
-        default:
-    }
-    return listData || [];
-}
+const formattedEntries = () =>
+    calendar.vcalendar[0].vevent.map((item) => ({
+        ...item,
+        dtstart: moment(moment(item.dtstart).toDate()).format('DD/MM/YYYY'),
+    }));
+
+const getListData = (value) => {
+    console.log(formattedEntries())
+    const date = value.format('DD/MM/YYYY');
+    const entriesByCurrentDate = formattedEntries().filter((item) => item.dtstart === date);
+
+    return entriesByCurrentDate.map((item) => ({
+        type: 'success',
+        content: item.description,
+        ...item
+    }));
+};
 
 function dateCellRender(value) {
     const listData = getListData(value);
     return (
         <ul className="events">
             {listData.map(item => (
-                <li key={item.content}>
+                <li key={item.uid} onClick={() => console.log(item)}>
                     <Badge status={item.type} text={item.content} />
                 </li>
             ))}
