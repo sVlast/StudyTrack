@@ -20,7 +20,7 @@ import {
 const { Content } = Layout;
 
 function Dashboard() {
-    //icons must same lenght as topics check
+    //icons must same length as topics check TopicMenu.js
     const topics = ["today", "calendar", "todo", "profile"];
     const icons = [
         <DashboardOutlined />,
@@ -81,12 +81,13 @@ function Dashboard() {
                             </div>
                         )}
                     />
+                    2
                     <Route
                         path="/dashboard/todo"
                         component={() => (
                             <div className="todo-dash">
-                                <h1>To do list</h1>
-                                <TodoList />
+                                <h1>To do list{userID}</h1>
+                                <TodoList value={userID} />
                             </div>
                         )}
                     />

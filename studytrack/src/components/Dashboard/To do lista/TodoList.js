@@ -5,11 +5,10 @@ import TodoForm from "./TodoForm";
 import "./TodoList.css";
 import useDatabaseContext from "../../../contexts/DatabaseContext.js";
 
-function TodoList() {
+function TodoList(props) {
     const [todos, setTodos] = useState([]);
-
-    const taskRef = firebase.database().ref("/Task");
-    const userID = useDatabaseContext;
+    const taskRef = firebase.database().ref("Task");
+    //const userID = useDatabaseContext();
 
     const addTodo = (todo) => {
         if (!todo.text || /^\s*$/.test(todo.text)) {
@@ -26,11 +25,11 @@ function TodoList() {
             id: todo.id,
             description: todo.text,
             complete: false,
-            userid: "test",
+            userid: props.value,
         };
         console.log(task);
         //firebase write
-        taskRef.push(task);
+        //taskRef.push(task);
     };
 
     const updateTodo = (todoId, newValue) => {

@@ -3,14 +3,14 @@ import firebase, { auth } from "../util/firebase.js";
 
 const DatabaseContext = React.createContext();
 
-const userID = auth.currentUser ? auth.currentUser.uid : null;
+const userID = auth.currentUser ? auth.currentUser.uid : "empty";
 
 export function useDatabaseContext() {
     return useContext(DatabaseContext);
 }
 
 export default function DatabaseProvider({ children }) {
-    //const [userID,] = useState(auth.currentUser);
+    //const [userID,_ignore] = useState(auth.currentUser);
 
     return (
         <DatabaseContext.Provider value={userID}>
