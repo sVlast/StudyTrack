@@ -172,7 +172,7 @@ export const StyledFeedbackModal = styled(Modal)`
         .ant-modal-content{
             min-width: 580px ;
             background-color: #fff !important;
-            height: 780px;
+            height: 800px;
             border-radius: 20px !important;
 
         }
@@ -186,7 +186,9 @@ export const StyledFeedbackModal = styled(Modal)`
         .ant-modal-body{
             background-color: #fff;
             text-align: center;
-
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
         }
         .ant-modal-body img{
@@ -199,32 +201,35 @@ export const StyledFeedbackModal = styled(Modal)`
             font-family: 'Roboto', sans-serif;
             font-weight: 300;
             text-align: center;
-            margin-top: 30px;
             font-size: 22px;
+            margin-bottom: 10px;
         }
 
         .ant-modal-body p:last-of-type{
-            margin: 80px 0 30px;
-            padding: 0;
+            margin-bottom: 25px;
         }
 
         .ant-modal form{
             margin:0 auto;
         }
-        .ant-modal-footer{
-            width: max-content;
-            margin: 0 auto;
-            border: none !important;
-            color: #fff;
+        .ant-modal-body h2{
+            margin: 15px 0;
+            font-family: 'Roboto', sans-serif;
+            font-size: 22px;
         }
-        .ant-modal-footer p{
-            margin-top: 60px;
+        .ant-modal-body .ant-rate{
+            margin: 20px 0 50px;
         }
-        .ant-modal-footer button{
-            display: flex;
-            justify-content: center;
-            margin: 0 auto;
+        
+        .ant-modal-body .ant-rate .anticon svg{
+            transform: scale(2);
+            margin: 0 10px;
         }
 
 
+        .ant-modal-body textarea.ant-input{
+            max-width: 70% !important;
+            margin-bottom: 20px;
+
+        }
     `;
