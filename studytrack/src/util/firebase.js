@@ -18,8 +18,9 @@ const app = firebase.initializeApp(firebaseConfig);
 
 export const auth = app.auth();
 
-//export const db = app.database().ref("users/"+auth.currentUser.uid);
+export default app;
 
+//export const db = app.database().ref("users/"+auth.currentUser.uid);
 // const tasks = app.database().ref("Task");
 // tasks
 //     .get()
@@ -45,5 +46,3 @@ export const auth = app.auth();
 //         //No user is signed in.
 //     }
 // });
-
-export default app;

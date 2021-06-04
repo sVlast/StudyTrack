@@ -3,7 +3,8 @@ import { useHistory } from "react-router-dom";
 import { Form, Input, Button } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import "./AntForm.css";
-import { auth } from "../../util/firebase.js";
+import firebase, { auth } from "../../util/firebase.js";
+//import "firebase/auth";
 import { StyledLogForm } from "./ModalStyle";
 
 const HorizontalLoginForm = () => {
@@ -12,6 +13,10 @@ const HorizontalLoginForm = () => {
     const history = useHistory();
 
     useEffect(() => {
+        // console.log("firebase auth()", firebase.auth());
+        // console.log("firebase auth", firebase.auth);
+        // console.log("firebase.auth.Auth", firebase.auth.Auth);
+        // console.log("firebase.auth().Auth", firebase.auth().Auth);
         forceUpdate({});
     }, []);
 
