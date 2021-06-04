@@ -4,13 +4,13 @@ import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 import "./TodoList.css";
 import { useDatabaseContext } from "../../../contexts/DatabaseContext.js";
+import FeedbackModal from '../Modal/FeedbackModal';
 
 function TodoList() {
     const [todos, setTodos] = useState([]);
+    const [showFeedbackModal, setShowFeedbackModal] = useState(false);
     const userID = useDatabaseContext();
     const taskRef = firebase.database().ref("Users/" + userID + "/Task");
-
-    console.log("UserID:", userID);
 
     useEffect(() => {
         taskRef.on("value", (snapshot) => {
@@ -67,6 +67,9 @@ function TodoList() {
             if (todo.id === id) {
                 //todo.complete = !todo.complete;
                 taskRef.child(id).update({ complete: !todo.complete });
+                if (!todo.complete) {
+                    setShowFeedbackModal(true)
+                }
             }
             return todo;
         });
@@ -82,6 +85,10 @@ function TodoList() {
                 completeTodo={completeTodo}
                 removeTodo={removeTodo}
                 updateTodo={updateTodo}
+            />
+            <FeedbackModal
+                isVisible={showFeedbackModal}
+                onClose={() => setShowFeedbackModal(false)}
             />
         </div>
     );
