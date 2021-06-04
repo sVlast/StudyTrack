@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Button, Rate, Input } from 'antd';
-import HorizontalLoginForm from '../../Landing/LogInModal';
 import { StyledFeedbackModal } from '../../Landing/ModalStyle';
 import { FrownOutlined, MehOutlined, SmileOutlined } from '@ant-design/icons';
 
