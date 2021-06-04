@@ -29,6 +29,8 @@ const FeedbackModal = () => {
         5: <SmileOutlined />,
     };
 
+    const FormItem = Form.Item;
+
     const onFinish = (values) => {
         console.log('Success:', values);
       };
@@ -38,7 +40,9 @@ const FeedbackModal = () => {
       };
 
       function onOk(values) {
-          console.log("Povratne informacije: ", values)
+          const rate = values.rate
+          const text = values.text
+          console.log("Povratne informacije: ", rate, text)
       }
 
     return (
@@ -63,12 +67,14 @@ const FeedbackModal = () => {
                 onFinishFailed={onFinishFailed}
                 onFinish={onOk}
                 >
-                    <Form.Item>
+                    <Form.Item name="rate">
                         <Rate defaultValue={3} character={({ index }) => customIcons[index + 1]} />            
                     </Form.Item>
                     <Form.Item>
                         <p>Have any more comments?</p>
                         <p>Write them below:</p>
+                    </Form.Item>
+                    <Form.Item name="text">
                         <TextArea rows={6} />
                     </Form.Item>
                     <Form.Item>
