@@ -227,7 +227,7 @@ export const StyledFeedbackModal = styled(Modal)`
         }
 
 
-        .ant-modal-body textarea.ant-input{
+        .ant-form-item-control-input-content textarea.ant-input{
             max-width: 70% !important;
             margin-bottom: 20px;
 
