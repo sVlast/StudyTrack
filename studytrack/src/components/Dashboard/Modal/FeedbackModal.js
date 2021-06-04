@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Button, Rate, Input, Form } from 'antd';
-import HorizontalLoginForm from '../../Landing/LogInModal';
 import { StyledFeedbackModal } from '../../Landing/ModalStyle';
 import { FrownOutlined, MehOutlined, SmileOutlined } from '@ant-design/icons';
 
@@ -33,16 +32,16 @@ const FeedbackModal = () => {
 
     const onFinish = (values) => {
         console.log('Success:', values);
-      };
-    
-      const onFinishFailed = (errorInfo) => {
+    };
+
+    const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
-      };
+    };
 
       function onOk(values) {
-          const rate = values.rate
-          const text = values.text
-          console.log("Povratne informacije: ", rate, text)
+          const grade = values.grade
+          const comment = values.comment
+          console.log("Povratne informacije: ", grade, comment)
       }
 
     return (
@@ -62,19 +61,17 @@ const FeedbackModal = () => {
                 <img src="/images/ST_Logo.png" alt="logo"></img>
                 <h2>Evaluate the lecture</h2>
                 <Form
-                name="basic"
-                onFinish={onFinish}
-                onFinishFailed={onFinishFailed}
-                onFinish={onOk}
+                    name="basic"
+                    onFinish={onFinish}
+                    onFinishFailed={onFinishFailed}
+                    onFinish={onOk}
                 >
-                    <Form.Item name="rate">
+                    <Form.Item name="grade">
                         <Rate defaultValue={3} character={({ index }) => customIcons[index + 1]} />            
                     </Form.Item>
-                    <Form.Item>
-                        <p>Have any more comments?</p>
-                        <p>Write them below:</p>
-                    </Form.Item>
-                    <Form.Item name="text">
+                    <p>Have any more comments?</p>
+                    <p>Write them below:</p>
+                    <Form.Item name="comment">
                         <TextArea rows={6} />
                     </Form.Item>
                     <Form.Item>
