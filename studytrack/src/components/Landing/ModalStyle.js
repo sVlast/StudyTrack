@@ -235,3 +235,71 @@ export const StyledFeedbackModal = styled(Modal)`
 
         }
     `;
+
+export const StyledCommentModal = styled(Modal)`
+        .ant-modal{
+        text-decoration: none;
+        width: 100%;
+        }
+        .ant-modal-content{
+            min-width: 580px ;
+            background-color: #fff !important;
+            height: 800px;
+            border-radius: 20px 0 0 20px !important;
+            overflow: auto;
+        }
+
+        .ant-modal-header{
+            text-align: center;
+            border-radius: 20px 20px 0 0 !important;
+            border: none !important;
+        }
+
+        .ant-modal-body{
+            background-color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 20px !important;
+
+        }
+        .ant-modal-body img{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .ant-modal-body p{
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            text-align: center;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .ant-modal-body p:last-of-type{
+            margin-bottom: 25px;
+        }
+
+        .ant-modal-body h2{
+            margin: 25px 0;
+            font-family: 'Roboto', sans-serif;
+            font-size: 22px;
+        }
+
+        .ant-modal-content::-webkit-scrollbar {
+            width: 1em;
+        }
+
+        .ant-modal-content::-webkit-scrollbar-track {
+            background-color: white;
+            border-radius: 0 20px 20px 0;
+        }
+
+        .ant-modal-content::-webkit-scrollbar-thumb {
+            background-color: darkgrey;
+            border-radius: 20px;
+        }
+
+    `;

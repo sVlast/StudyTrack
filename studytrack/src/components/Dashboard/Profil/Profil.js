@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentModal from '../Modal/CommentModal.js';
 import FeedbackModal from '../Modal/FeedbackModal.js';
 import PasswordForm from './PasswordForm.js';
 import UsernameForm from './UsernameForm.js';
@@ -16,6 +17,7 @@ function Profil() {
                 <PasswordForm />
             </div>
             <FeedbackModal />
+            <CommentModal />
         </div>
     )
 };
