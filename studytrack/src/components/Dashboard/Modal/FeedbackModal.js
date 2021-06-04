@@ -75,7 +75,7 @@ const FeedbackModal = () => {
                         <TextArea rows={6} />
                     </Form.Item>
                     <Form.Item>
-                        <Button type="primary" htmlType="submit">Submit</Button>
+                        <Button type="primary" htmlType="submit" onClick={handleOk} >Submit</Button>
                     </Form.Item>
                 </Form>
             </StyledFeedbackModal>
