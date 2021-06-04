@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Button, Rate, Input, Form } from 'antd';
-import HorizontalLoginForm from '../../Landing/LogInModal';
 import { StyledFeedbackModal } from '../../Landing/ModalStyle';
 import { FrownOutlined, MehOutlined, SmileOutlined } from '@ant-design/icons';
 
@@ -31,15 +30,15 @@ const FeedbackModal = () => {
 
     const onFinish = (values) => {
         console.log('Success:', values);
-      };
-    
-      const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
-      };
+    };
 
-      function onOk(values) {
-          console.log("Povratne informacije: ", values)
-      }
+    const onFinishFailed = (errorInfo) => {
+        console.log('Failed:', errorInfo);
+    };
+
+    function onOk(values) {
+        console.log("Povratne informacije: ", values)
+    }
 
     return (
         <>
@@ -58,17 +57,17 @@ const FeedbackModal = () => {
                 <img src="/images/ST_Logo.png" alt="logo"></img>
                 <h2>Evaluate the lecture</h2>
                 <Form
-                name="basic"
-                onFinish={onFinish}
-                onFinishFailed={onFinishFailed}
-                onFinish={onOk}
+                    name="basic"
+                    onFinish={onFinish}
+                    onFinishFailed={onFinishFailed}
+                    onFinish={onOk}
                 >
                     <Form.Item>
-                        <Rate defaultValue={3} character={({ index }) => customIcons[index + 1]} />            
+                        <Rate defaultValue={3} character={({ index }) => customIcons[index + 1]} />
                     </Form.Item>
+                    <p>Have any more comments?</p>
+                    <p>Write them below:</p>
                     <Form.Item>
-                        <p>Have any more comments?</p>
-                        <p>Write them below:</p>
                         <TextArea rows={6} />
                     </Form.Item>
                     <Form.Item>
