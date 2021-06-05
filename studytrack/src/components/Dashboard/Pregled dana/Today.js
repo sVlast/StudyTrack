@@ -3,6 +3,8 @@ import firebase from "../../../util/firebase.js";
 import { List, Card } from "antd";
 import "./Today.css";
 import Todo from "../To do lista/Todo";
+import FeedbackModal from "../Modal/FeedbackModal.js";
+import { useDatabaseContext } from "../../../contexts/DatabaseContext.js";
 
 const data = [
     {
@@ -31,37 +33,19 @@ const data = [
     },
 ];
 
-const taskRef = firebase.database().ref("Task");
 
 function Today() {
     const [todos, setTodos] = useState([]);
+    const [showFeedbackModal, setShowFeedbackModal] = useState(false);
+    const userID = useDatabaseContext();
+    const taskRef = firebase.database().ref("Users/" + userID + "/Task");
 
     useEffect(() => {
-        // taskRef
-        //     .get()
-        //     .then((snapshot) => {
-        //         if (snapshot.exists()) {
-        //             console.log(snapshot);
-        //             const tasks = snapshot.val();
-        //             const taskList = [];
-        //             for (let id in tasks) {
-        //                 taskList.push({ id, ...tasks[id] });
-        //             }
-        //             setTodos(taskList);
-        //             console.log(tasks);
-        //             console.log(taskList);
-        //         } else {
-        //             console.log("No data available");
-        //         }
-        //     })
-        //     .catch((error) => {
-        //         console.log(error);
-        //     });
         taskRef.on("value", (snapshot) => {
             const tasks = snapshot.val();
             const taskList = [];
             for (let id in tasks) {
-                taskList.push({ id, ...tasks[id] });
+                taskList.unshift({ id, ...tasks[id] });
             }
             setTodos(taskList);
             //console.log(tasks);
@@ -95,6 +79,9 @@ function Today() {
             if (todo.id === id) {
                 //todo.complete = !todo.complete;
                 taskRef.child(id).update({ complete: !todo.complete });
+                if (!todo.complete) {
+                    setShowFeedbackModal(true)
+                }
             }
             return todo;
         });
@@ -126,6 +113,10 @@ function Today() {
                         completeTodo={completeTodo}
                         removeTodo={removeTodo}
                         updateTodo={updateTodo}
+                    />
+                    <FeedbackModal
+                        isVisible={showFeedbackModal}
+                        onClose={() => setShowFeedbackModal(false)}
                     />
                 </div>
             </div>

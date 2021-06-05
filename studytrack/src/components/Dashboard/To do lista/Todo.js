@@ -38,7 +38,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
             className={todo.complete ? "todo-row complete" : "todo-row"}
             key={index}
         >
-            <div key={todo.id} onClick={() => completeTodo(todo.id)}>
+            <div onClick={() => completeTodo(todo.id)}>
                 {todo.title}
             </div>
             <div className="icons">
