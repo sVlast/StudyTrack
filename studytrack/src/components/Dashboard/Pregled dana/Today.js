@@ -36,18 +36,21 @@ const data = [
 
 function Today() {
     const [todos, setTodos] = useState([]);
-    const [time, setTime] = useState(moment().format("DD/MM/YYYY"));
+    const [time, setTime] = useState(
+        moment().add(2, "days").format("DD/MM/YYYY")
+    );
     const [showFeedbackModal, setShowFeedbackModal] = useState(false);
     const userID = useDatabaseContext();
 
-    const taskRef = firebase
+    const taskRef = firebase.database().ref("Users/" + userID + "/Task");
+    const taskRefToday = firebase
         .database()
         .ref("Users/" + userID + "/Task")
         .orderByChild("dtstart")
         .equalTo(time);
 
     useEffect(() => {
-        taskRef.on("value", (snapshot) => {
+        taskRefToday.on("value", (snapshot) => {
             const tasks = snapshot.val();
             const taskList = [];
             for (let id in tasks) {
