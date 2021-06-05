@@ -9,6 +9,7 @@ import SideBar from "./SideBar";
 import TodoList from "./To do lista/TodoList";
 import Today from "./Pregled dana/Today";
 import Kalendar from "./Kalendar/Kalendar";
+import Converter from "./Kalendar/Converter.js";
 import Profil from "./Profil/Profil.js";
 import {
     DashboardOutlined,
@@ -60,6 +61,7 @@ function Dashboard() {
                             <div className="today">
                                 <h1>Today's tasks</h1>
                                 <Today />
+                                {/* <Converter /> */}
                             </div>
                         )}
                     />

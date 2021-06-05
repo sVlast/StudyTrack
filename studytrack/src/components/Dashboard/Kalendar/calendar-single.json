@@ -1,0 +1,232 @@
+{
+    "vcalendar": [
+        {
+            "vevent": [
+                {
+                    "dtstart": [
+                        "20210311T101500",
+                        {
+                            "tzid": "Europe/Belgrade"
+                        }
+                    ],
+                    "dtend": [
+                        "20210311T114500",
+                        {
+                            "tzid": "Europe/Belgrade"
+                        }
+                    ],
+                    "rrule": {
+                        "freq": "WEEKLY",
+                        "wkst": "SU",
+                        "count": "16",
+                        "byday": "TH"
+                    },
+                    "dtstamp": "20210604T121742Z",
+                    "uid": "2eb58f72-89fd-453d-937f-070c55d7c450",
+                    "created": "20210509T203921Z",
+                    "description": "Grafciki dizajn - Predavanja\\nProf. dr. sc. Jana iljak Gri \\, mag. design\\nSmjer: Informatiki dizajn",
+                    "last-modified": "20210604T121620Z",
+                    "location": "ONLINE-INRO\\, INRO2-D",
+                    "sequence": "1",
+                    "status": "CONFIRMED",
+                    "summary": "Grafciki dizajn\\, Predavanja\\, Prof. dr. sc. Jana iljak Gri \\, mag. design",
+                    "transp": "OPAQUE"
+                },
+                {
+                    "dtstart": [
+                        "20210310T163000",
+                        {
+                            "tzid": "Europe/Belgrade"
+                        }
+                    ],
+                    "dtend": [
+                        "20210310T180000",
+                        {
+                            "tzid": "Europe/Belgrade"
+                        }
+                    ],
+                    "rrule": {
+                        "freq": "WEEKLY",
+                        "wkst": "SU",
+                        "count": "16",
+                        "byday": "WE"
+                    },
+                    "dtstamp": "20210604T121742Z",
+                    "uid": "1e55621a-7093-4b7e-b45e-a1c5f9bd11a5",
+                    "created": "20210509T203921Z",
+                    "description": "Digitalna fotografija - Predavanja\\n Milan Baji \\nSmjer: Informatiki dizajn",
+                    "last-modified": "20210604T121553Z",
+                    "location": "ONLINE-INRO\\, INRO2-D",
+                    "sequence": "1",
+                    "status": "CONFIRMED",
+                    "summary": "Digitalna fotografija\\, Predavanja\\,  Milan Baji ",
+                    "transp": "OPAQUE"
+                },
+                {
+                    "dtstart": [
+                        "20210310T133000",
+                        {
+                            "tzid": "Europe/Belgrade"
+                        }
+                    ],
+                    "dtend": [
+                        "20210310T150000",
+                        {
+                            "tzid": "Europe/Belgrade"
+                        }
+                    ],
+                    "rrule": {
+                        "freq": "WEEKLY",
+                        "wkst": "SU",
+                        "count": "16",
+                        "byday": "WE"
+                    },
+                    "dtstamp": "20210604T121742Z",
+                    "uid": "5038cc85-de5b-45cc-b884-f9402f40692a",
+                    "created": "20210509T203921Z",
+                    "description": "Graficki dizajn - Laboratorijske vjebe\\nmag.des. Ulla Leiner Maksan \\nSmjer: Informatiki dizajn",
+                    "last-modified": "20210604T121540Z",
+                    "location": "ONLINE-INRO\\, INROLab1",
+                    "sequence": "1",
+                    "status": "CONFIRMED",
+                    "summary": "Graficki dizajn\\, Laboratorijske vjebe\\, mag.des. Ulla Leiner Maksan ",
+                    "transp": "OPAQUE"
+                },
+                {
+                    "dtstart": [
+                        "20210309T180000",
+                        {
+                            "tzid": "Europe/Belgrade"
+                        }
+                    ],
+                    "dtend": [
+                        "20210309T193000",
+                        {
+                            "tzid": "Europe/Belgrade"
+                        }
+                    ],
+                    "rrule": {
+                        "freq": "WEEKLY",
+                        "wkst": "SU",
+                        "count": "16",
+                        "byday": "TU"
+                    },
+                    "dtstamp": "20210604T121742Z",
+                    "uid": "224e7659-6a12-4f6f-a1b4-50dc0ca5b56e",
+                    "created": "20210509T203921Z",
+                    "description": "Poslovni engleski jezik za IT - Predavanja\\ndr.sc. Biljana Stojakovi \\,prof.v.. u trajnom zvanju\\nSmjer: Informatiki dizajn",
+                    "last-modified": "20210604T121525Z",
+                    "location": "ONLINE-INRO\\, INRO2-D",
+                    "sequence": "1",
+                    "status": "CONFIRMED",
+                    "summary": "Poslovni engleski jezik za IT\\, Predavanja\\, dr.sc. Biljana Stojakovi \\,prof.v.. u trajnom zvanju",
+                    "transp": "OPAQUE"
+                },
+                {
+                    "dtstart": [
+                        "20210309T163000",
+                        {
+                            "tzid": "Europe/Belgrade"
+                        }
+                    ],
+                    "dtend": [
+                        "20210309T180000",
+                        {
+                            "tzid": "Europe/Belgrade"
+                        }
+                    ],
+                    "rrule": {
+                        "freq": "WEEKLY",
+                        "wkst": "SU",
+                        "count": "16",
+                        "byday": "TU"
+                    },
+                    "dtstamp": "20210604T121742Z",
+                    "uid": "ce8900fc-4521-418b-b989-c833485aaa01",
+                    "created": "20210509T203921Z",
+                    "description": "Poslovni engleski jezik za IT - Auditorne vjebe\\n Marija Krstini \\nSmjer: Informatiki dizajn",
+                    "last-modified": "20210604T121514Z",
+                    "location": "ONLINE-INRO\\, INRO2-C",
+                    "sequence": "1",
+                    "status": "CONFIRMED",
+                    "summary": "Poslovni engleski jezik za IT\\, Auditorne vjebe\\,  Marija Krstini ",
+                    "transp": "OPAQUE"
+                },
+                {
+                    "dtstart": [
+                        "20210308T180000",
+                        {
+                            "tzid": "Europe/Belgrade"
+                        }
+                    ],
+                    "dtend": [
+                        "20210308T193000",
+                        {
+                            "tzid": "Europe/Belgrade"
+                        }
+                    ],
+                    "rrule": {
+                        "freq": "WEEKLY",
+                        "wkst": "SU",
+                        "count": "16",
+                        "byday": "MO"
+                    },
+                    "dtstamp": "20210604T121742Z",
+                    "uid": "04c59c54-9332-48c6-b780-2bf668016a59",
+                    "created": "20210509T203921Z",
+                    "description": "XML programiranje - Predavanja\\ndr.sc. Alen imec v. predava\\nSmjer: Informatiki dizajn",
+                    "last-modified": "20210604T121502Z",
+                    "location": "ONLINE-INRO\\, INRO2-D",
+                    "sequence": "1",
+                    "status": "CONFIRMED",
+                    "summary": "XML programiranje\\, Predavanja\\, dr.sc. Alen imec v. predava",
+                    "transp": "OPAQUE"
+                },
+                {
+                    "dtstart": [
+                        "20210308T130000",
+                        {
+                            "tzid": "Europe/Belgrade"
+                        }
+                    ],
+                    "dtend": [
+                        "20210308T150000",
+                        {
+                            "tzid": "Europe/Belgrade"
+                        }
+                    ],
+                    "rrule": {
+                        "freq": "WEEKLY",
+                        "wkst": "SU",
+                        "count": "16",
+                        "byday": "MO"
+                    },
+                    "dtstamp": "20210604T121742Z",
+                    "uid": "19f40f8b-cf6c-426c-9c7d-3f4b94b8f7fb",
+                    "created": "20210509T203921Z",
+                    "description": "Digitalna fotografija - Laboratorijske vjebe\\n Milan Baji \\nSmjer: Informatiki dizajn",
+                    "last-modified": "20210604T121421Z",
+                    "location": "ONLINE-INRO\\, INROLab8",
+                    "sequence": "3",
+                    "status": "CONFIRMED",
+                    "summary": "Digitalna fotografija\\, Laboratorijske vjebe\\,  Milan Baji ",
+                    "transp": "OPAQUE"
+                },
+                {
+                    "dtstart": "20210624T143000Z",
+                    "dtend": "20210624T173000Z",
+                    "dtstamp": "20210604T121742Z",
+                    "uid": "527eac39-4ddb-4faa-b632-b2cf50d572c1",
+                    "created": "20210509T203921Z",
+                    "description": "Programiranje web aplikacija - Laboratorijske vjebe\\n Petar Osterman stru. spec. ing. techn. inf.\\nSmjer: Informatiki dizajn",
+                    "last-modified": "20210604T115727Z",
+                    "location": "ONLINE-INRO\\, INROLab7",
+                    "sequence": "0",
+                    "status": "CONFIRMED",
+                    "summary": "Programiranje web aplikacija\\, Laboratorijske vjebe\\,  Petar Osterman stru. spec. ing. techn. inf.",
+                    "transp": "OPAQUE"
+                }
+            ]
+        }
+    ]
+}

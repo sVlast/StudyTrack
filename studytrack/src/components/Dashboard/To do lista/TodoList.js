@@ -10,7 +10,7 @@ function TodoList() {
     const userID = useDatabaseContext();
     const taskRef = firebase.database().ref("Users/" + userID + "/Task");
 
-    console.log("UserID:", userID);
+    console.log("TodoList.js - UserID:", userID);
 
     useEffect(() => {
         taskRef.on("value", (snapshot) => {

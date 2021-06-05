@@ -1,22 +1,25 @@
-import React from 'react';
+import React from "react";
 import { Calendar, Badge } from "antd";
-import calendar from './calendar.json';
-import moment from 'moment';
+import calendar from "./calendar.json";
+import calSingle from "./calendar-single.json";
+import moment from "moment";
 
 const formattedEntries = () =>
     calendar.vcalendar[0].vevent.map((item) => ({
         ...item,
-        dtstart: moment(moment(item.dtstart).toDate()).format('DD/MM/YYYY'),
+        dtstart: moment(moment(item.dtstart).toDate()).format("DD/MM/YYYY"),
     }));
 
 const getListData = (value) => {
-    const date = value.format('DD/MM/YYYY');
-    const entriesByCurrentDate = formattedEntries().filter((item) => item.dtstart === date);
+    const date = value.format("DD/MM/YYYY");
+    const entriesByCurrentDate = formattedEntries().filter(
+        (item) => item.dtstart === date
+    );
 
     return entriesByCurrentDate.map((item) => ({
-        type: 'success',
+        type: "success",
         content: item.description,
-        ...item
+        ...item,
     }));
 };
 
@@ -24,7 +27,7 @@ function dateCellRender(value) {
     const listData = getListData(value);
     return (
         <ul className="events">
-            {listData.map(item => (
+            {listData.map((item) => (
                 <li key={item.uid} onClick={() => console.log(item)}>
                     <Badge status={item.type} text={item.content} />
                 </li>
@@ -49,12 +52,13 @@ function monthCellRender(value) {
     ) : null;
 }
 
-
-
 function Kalendar() {
     return (
-        <Calendar dateCellRender={dateCellRender} monthCellRender={monthCellRender} />
-    )
+        <Calendar
+            dateCellRender={dateCellRender}
+            monthCellRender={monthCellRender}
+        />
+    );
 }
 
 export default Kalendar;
