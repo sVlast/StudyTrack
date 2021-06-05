@@ -2,13 +2,16 @@ import React, { useState } from 'react';
 import { StyledQRModal } from '../../Landing/ModalStyle';
 import { QrcodeOutlined } from "@ant-design/icons";
 import { Spin } from 'antd';
+import { useDatabaseContext } from '../../../contexts/DatabaseContext';
 
 
 const QRModal = ({ todo }) => {
     const [isModalVisible, setIsModalVisible] = useState(false);
 
     const [isGenerating, setIsGenerating] = useState(true);
-    const path = `Users/${todo.userid}/Task/${todo.id}`;
+    const userid = useDatabaseContext();
+    const path = `Users/${userid}/Task/${todo.id}`;
+
 
     const showModal = () => {
         setIsModalVisible(true);
