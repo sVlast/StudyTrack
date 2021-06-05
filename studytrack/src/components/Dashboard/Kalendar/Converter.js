@@ -26,10 +26,16 @@ export default function Converter() {
                     let obj = {
                         dtstart: moment(moment(item.dtstart[0]).toDate())
                             .add(7 * i, "days")
-                            .format("DD/MM/YYYY HH:mm:ss"),
+                            .format("DD/MM/YYYY"),
                         dtend: moment(moment(item.dtend[0]).toDate())
                             .add(7 * i, "days")
-                            .format("DD/MM/YYYY HH:mm:ss"),
+                            .format("DD/MM/YYYY"),
+                        htstart: moment(
+                            moment(item.dtstart[0]).toDate()
+                        ).format("HH:mm:ss"),
+                        htend: moment(moment(item.dtend[0]).toDate()).format(
+                            "HH:mm:ss"
+                        ),
                         complete: false,
                         wasPresent: false,
                         description: item.description,
