@@ -33,12 +33,14 @@ const data = [
     },
 ];
 
-
 function Today() {
     const [todos, setTodos] = useState([]);
     const [showFeedbackModal, setShowFeedbackModal] = useState(false);
     const userID = useDatabaseContext();
-    const taskRef = firebase.database().ref("Users/" + userID + "/Task");
+    const taskRef = firebase
+        .database()
+        .ref("Users/" + userID + "/Task")
+        .orderByChild("dtstart");
 
     useEffect(() => {
         taskRef.on("value", (snapshot) => {
@@ -80,7 +82,7 @@ function Today() {
                 //todo.complete = !todo.complete;
                 taskRef.child(id).update({ complete: !todo.complete });
                 if (!todo.complete) {
-                    setShowFeedbackModal(true)
+                    setShowFeedbackModal(true);
                 }
             }
             return todo;
