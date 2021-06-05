@@ -12,7 +12,7 @@ function TodoList() {
     const userID = useDatabaseContext();
     const taskRef = firebase.database().ref("Users/" + userID + "/Task");
 
-    console.log("TodoList.js - UserID:", userID);
+    //console.log("TodoList.js - UserID:", userID);
 
     useEffect(() => {
         taskRef.on("value", (snapshot) => {
@@ -67,9 +67,20 @@ function TodoList() {
     const completeTodo = (id) => {
         let updatedTodos = todos.map((todo) => {
             if (todo.id === id) {
+
                 //todo.complete = !todo.complete;
                 taskRef.child(id).update({ complete: !todo.complete });
-                if (!todo.complete) {
+                const task = taskRef.child(id).get().then((snapshot) => {
+                    if (snapshot.exists()) {
+                        const val = snapshot.val();
+                        return val;
+                    } else {
+                        console.log("No data available");
+                    }
+                }).catch((error) => {
+                    console.error(error);
+                });
+                if (!todo.complete && task.wasPresent) {
                     setShowFeedbackModal(true);
                 }
             }
