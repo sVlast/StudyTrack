@@ -142,6 +142,14 @@ export const StyledRegModal = styled(Modal)`
         .ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before{
             color:#fff;
         }
+        .ant-checkbox-wrapper{
+            color: #fff;
+            margin: 15px auto 0;
+        }
+        #register{
+            display:flex;
+            flex-direction: column;
+        }
     `;
 
 export const StyledLogForm = styled(Form)`
