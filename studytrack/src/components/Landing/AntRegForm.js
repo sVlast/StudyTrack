@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Form, Input, Button, Checkbox } from 'antd';
-import './AntRegForm.css';
+import { Form, Input, Button, Checkbox } from "antd";
+import "./AntRegForm.css";
 import { auth } from "../../util/firebase.js";
-import { StyledRegForm } from './ModalStyle';
-
+import { StyledRegForm } from "./ModalStyle";
 
 const formItemLayout = {
     labelCol: {
@@ -34,20 +33,19 @@ const btnFormItemLayout = {
         sm: {
             span: 24,
             offset: 8,
-
         },
     },
 };
 
-
 const RegistrationForm = () => {
     const [form] = Form.useForm();
+    const [hidden, setHidden] = useState(true);
     const history = useHistory();
 
     const onFinish = (values) => {
         auth.createUserWithEmailAndPassword(values.email, values.password)
             .then((userCredential) => {
-                // Signed in 
+                // Signed in
                 const user = userCredential.user;
                 // ...
                 history.push("/dashboard");
@@ -55,12 +53,12 @@ const RegistrationForm = () => {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(error)
+                console.log(error);
                 // ..
             });
-
     };
 
+    const onChange = () => {};
 
     return (
         <StyledRegForm
@@ -78,12 +76,12 @@ const RegistrationForm = () => {
                 label="E-mail"
                 rules={[
                     {
-                        type: 'email',
-                        message: 'The input is not valid E-mail!',
+                        type: "email",
+                        message: "The input is not valid E-mail!",
                     },
                     {
                         required: true,
-                        message: 'Please input your E-mail!',
+                        message: "Please input your E-mail!",
                     },
                 ]}
             >
@@ -96,7 +94,7 @@ const RegistrationForm = () => {
                 rules={[
                     {
                         required: true,
-                        message: 'Please input your password!',
+                        message: "Please input your password!",
                     },
                 ]}
                 hasFeedback
@@ -107,20 +105,24 @@ const RegistrationForm = () => {
             <Form.Item
                 name="confirm"
                 label="Confirm Password"
-                dependencies={['password']}
+                dependencies={["password"]}
                 hasFeedback
                 rules={[
                     {
                         required: true,
-                        message: 'Please confirm your password!',
+                        message: "Please confirm your password!",
                     },
                     ({ getFieldValue }) => ({
                         validator(_, value) {
-                            if (!value || getFieldValue('password') === value) {
+                            if (!value || getFieldValue("password") === value) {
                                 return Promise.resolve();
                             }
 
-                            return Promise.reject(new Error('The two passwords that you entered do not match!'));
+                            return Promise.reject(
+                                new Error(
+                                    "The two passwords that you entered do not match!"
+                                )
+                            );
                         },
                     }),
                 ]}
@@ -129,17 +131,19 @@ const RegistrationForm = () => {
             </Form.Item>
 
             <Form.Item name="checkbox" valuePropName="checked" noStyle>
-                <Checkbox>Checkbox</Checkbox>
+                <Checkbox onChange={() => setHidden(!hidden)}>
+                    Sign up as Professor
+                </Checkbox>
             </Form.Item>
 
-            <Form.Item label="Input">
+            <Form.Item hidden={hidden} label="Code">
                 <Input />
             </Form.Item>
 
             <Form.Item {...btnFormItemLayout}>
                 <Button type="normal" htmlType="submit">
                     Register
-        </Button>
+                </Button>
             </Form.Item>
         </StyledRegForm>
     );
