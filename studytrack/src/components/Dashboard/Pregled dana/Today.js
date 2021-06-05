@@ -5,6 +5,7 @@ import "./Today.css";
 import Todo from "../To do lista/Todo";
 import FeedbackModal from "../Modal/FeedbackModal.js";
 import { useDatabaseContext } from "../../../contexts/DatabaseContext.js";
+import moment from "moment";
 
 const data = [
     {
@@ -35,12 +36,15 @@ const data = [
 
 function Today() {
     const [todos, setTodos] = useState([]);
+    const [time, setTime] = useState(moment().format("DD/MM/YYYY"));
     const [showFeedbackModal, setShowFeedbackModal] = useState(false);
     const userID = useDatabaseContext();
+
     const taskRef = firebase
         .database()
         .ref("Users/" + userID + "/Task")
-        .orderByChild("dtstart");
+        .orderByChild("dtstart")
+        .equalTo(time);
 
     useEffect(() => {
         taskRef.on("value", (snapshot) => {
