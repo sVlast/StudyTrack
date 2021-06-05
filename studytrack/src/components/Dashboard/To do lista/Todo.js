@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TodoForm from "./TodoForm";
-import { EditOutlined, CloseOutlined } from "@ant-design/icons";
+import { EditOutlined, CloseOutlined, QrcodeOutlined } from "@ant-design/icons";
+import QRModal from "../Modal/QRModal.js";
 
 function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
     const [edit, setEdit] = useState({
@@ -32,7 +33,6 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
     if (edit.id) {
         return <TodoForm edit={edit} onSubmit={submitUpdate} />;
     }
-
     return todos.map((todo, index) => (
         <div
             className={todo.complete ? "todo-row complete" : "todo-row"}
@@ -42,14 +42,15 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
                 {todo.title}
             </div>
             <div className="icons">
-                <CloseOutlined
+                {/* <CloseOutlined
                     onClick={() => removeTodo(todo.id)}
                     className="delete-icon"
                 />
                 <EditOutlined
                     onClick={() => setEdit({ id: todo.id, value: todo.title })}
                     className="edit-icon"
-                />
+                /> */}
+                <QRModal todo={todo} />
             </div>
         </div>
     ));
