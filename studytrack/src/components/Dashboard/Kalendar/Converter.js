@@ -17,10 +17,10 @@ export default function Converter() {
     const backupRef = firebase.database().ref("Users/" + userID + "/Task");
 
     function readGoogleCal(cal) {
-        console.log(userID);
+        console.log("Converter.js - ", userID);
         cal.vcalendar[0].vevent.map((item) => {
             if (item.rrule) {
-                console.log(item);
+                console.log("Converter.js - ", item);
                 let type = parseType(item.description);
                 for (let i = 0; i < item.rrule.count; i++) {
                     let obj = {
@@ -38,7 +38,7 @@ export default function Converter() {
                         comment: "",
                         grade: 0,
                     };
-                    console.log("obj", obj);
+                    console.log("Converter.js - obj", obj);
                     backupRef.push(obj);
                 }
             }

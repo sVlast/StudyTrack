@@ -1,7 +1,6 @@
 import React from "react";
 import { Calendar, Badge } from "antd";
 import calendar from "./calendar.json";
-import calSingle from "./calendar-single.json";
 import moment from "moment";
 
 const formattedEntries = () =>
