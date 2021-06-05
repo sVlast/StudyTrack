@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
-import { Form, Input, Button, } from 'antd';
+import { Form, Input, Button, Checkbox } from 'antd';
 import './AntRegForm.css';
 import { auth } from "../../util/firebase.js";
 import { StyledRegForm } from './ModalStyle';
@@ -126,6 +126,14 @@ const RegistrationForm = () => {
                 ]}
             >
                 <Input.Password />
+            </Form.Item>
+
+            <Form.Item name="checkbox" valuePropName="checked" noStyle>
+                <Checkbox>Checkbox</Checkbox>
+            </Form.Item>
+
+            <Form.Item label="Input">
+                <Input />
             </Form.Item>
 
             <Form.Item {...btnFormItemLayout}>
