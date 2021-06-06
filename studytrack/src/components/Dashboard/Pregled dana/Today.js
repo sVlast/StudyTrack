@@ -9,10 +9,9 @@ import moment from "moment";
 
 function Today() {
     const [todos, setTodos] = useState([]);
-    const [time, setTime] = useState(
-        moment().add(2, "days").format("DD/MM/YYYY")
-    );
+    const [time, setTime] = useState(moment().format("DD/MM/YYYY"));
     const [showFeedbackModal, setShowFeedbackModal] = useState(false);
+    const [taskID, setTaskID] = useState("");
     const userID = useDatabaseContext();
 
     const taskRef = firebase.database().ref("Users/" + userID + "/Task");
@@ -113,10 +112,13 @@ function Today() {
                         completeTodo={completeTodo}
                         removeTodo={removeTodo}
                         updateTodo={updateTodo}
+                        setTaskID={setTaskID}
                     />
                     <FeedbackModal
                         isVisible={showFeedbackModal}
                         onClose={() => setShowFeedbackModal(false)}
+                        taskID={taskID}
+                        userID={userID}
                     />
                 </div>
             </div>

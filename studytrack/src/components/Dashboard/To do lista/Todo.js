@@ -3,7 +3,7 @@ import TodoForm from "./TodoForm";
 import { EditOutlined, CloseOutlined, QrcodeOutlined } from "@ant-design/icons";
 import QRModal from "../Modal/QRModal.js";
 
-function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
+function Todo({ todos, completeTodo, removeTodo, updateTodo, setTaskID }) {
     const [edit, setEdit] = useState({
         id: null,
         title: "",
@@ -30,6 +30,11 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
         });
     };
 
+    const taskTrigger = (id) => {
+        completeTodo(id);
+        setTaskID(id);
+    };
+
     if (edit.id) {
         return <TodoForm edit={edit} onSubmit={submitUpdate} />;
     }
@@ -38,7 +43,11 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
             className={todo.complete ? "todo-row complete" : "todo-row"}
             key={index}
         >
-            <div onClick={() => completeTodo(todo.id)}>
+            <div
+                onClick={() => {
+                    taskTrigger(todo.id);
+                }}
+            >
                 {todo.title}
             </div>
             <div className="icons">
