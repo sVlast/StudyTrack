@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, List, Card, Rate } from 'antd';
 import { StyledCommentModal } from '../../Landing/ModalStyle';
-import { FrownOutlined, MehOutlined, SmileOutlined } from '@ant-design/icons';
+import { FrownOutlined, MehOutlined, SmileOutlined, CommentOutlined } from '@ant-design/icons';
 
 const CommentModal = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -49,9 +49,8 @@ const CommentModal = () => {
 
     return (
         <>
-            <Button type="primary" onClick={showModal}>
-                Modal
-      </Button>
+            <CommentOutlined onClick={showModal}/>
+
             <StyledCommentModal
                 title=" "
                 centered
