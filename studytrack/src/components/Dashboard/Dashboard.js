@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDatabaseContext } from "../../contexts/DatabaseContext.js";
+import { useDatabaseContext, useProfileType } from "../../contexts/DatabaseContext.js";
 import { Layout } from "antd";
 import { Route, useHistory } from "react-router-dom";
 import TopicMenu from "./TopicMenu";
@@ -60,7 +60,8 @@ function Dashboard() {
       console.log("tip: ", profType)
   }) */
 
-  let type = "profesor";
+  const { type, isLoading } = useProfileType();
+  console.log(type);
 
   return (
     <div className="App">
@@ -74,7 +75,9 @@ function Dashboard() {
             component={() => (
               <div className="today">
                 <h1>Today is: {time}</h1>
-                {type === "profesor" ? <TodayProfesor /> : <Today />}
+                {isLoading && 'Loading'}
+                {!isLoading && type === 'profesor' && <TodayProfesor />}
+                {!isLoading && type !== 'profesor' && <Today />}
                 {/* <Converter /> */}
               </div>
             )}

@@ -3,20 +3,8 @@ import { Button, List, Card, Rate } from 'antd';
 import { StyledCommentModal } from '../../Landing/ModalStyle';
 import { FrownOutlined, MehOutlined, SmileOutlined, CommentOutlined } from '@ant-design/icons';
 
-const CommentModal = () => {
-    const [isModalVisible, setIsModalVisible] = useState(false);
+const CommentModal = ({ isVisible, onClose }) => {
 
-    const showModal = () => {
-        setIsModalVisible(true);
-    };
-
-    const handleOk = () => {
-        setIsModalVisible(false);
-    };
-
-    const handleCancel = () => {
-        setIsModalVisible(false);
-    };
     const data = [
         {
             grade: 2,
@@ -48,33 +36,31 @@ const CommentModal = () => {
     };
 
     return (
-        <>
-            <CommentOutlined onClick={showModal}/>
 
-            <StyledCommentModal
-                title=" "
-                centered
-                visible={isModalVisible}
-                onOk={handleOk}
-                onCancel={handleCancel}
-                width={'55vw'}
-                footer={null}
-            >
-                <img src="/images/ST_Logo.png" alt="logo"></img>
-                <h2>Comments and feedback from the lecture</h2>
-                <List
-                    grid={{ gutter: 16, column: 1 }}
-                    dataSource={data}
-                    renderItem={(item) => (
-                        <List.Item>
-                            <Card title={<Rate disabled defaultValue={item.grade} character={({ index }) => customIcons[index + 1]} />}>
-                                {item.comment}
-                            </Card>
-                        </List.Item>
-                    )}
-                />
-            </StyledCommentModal>
-        </>
+
+        <StyledCommentModal
+            title=" "
+            centered
+            visible={isVisible}
+            onCancel={onClose}
+            width={'55vw'}
+            footer={null}
+
+        >
+            <img src="/images/ST_Logo.png" alt="logo"></img>
+            <h2>Comments and feedback from the lecture</h2>
+            <List
+                grid={{ gutter: 16, column: 1 }}
+                dataSource={data}
+                renderItem={(item) => (
+                    <List.Item>
+                        <Card title={<Rate disabled defaultValue={item.grade} character={({ index }) => customIcons[index + 1]} />}>
+                            {item.comment}
+                        </Card>
+                    </List.Item>
+                )}
+            />
+        </StyledCommentModal>
     );
 };
 

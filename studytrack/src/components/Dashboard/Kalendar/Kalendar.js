@@ -3,7 +3,8 @@ import { Calendar, Badge } from "antd";
 import calendar from "./calendar.json";
 import moment from "moment";
 import firebase from "../../../util/firebase.js";
-import { useDatabaseContext } from "./../../../contexts/DatabaseContext";
+import { useDatabaseContext, useProfileType } from "./../../../contexts/DatabaseContext";
+import CommentModal from "../Modal/CommentModal";
 
 function Kalendar() {
   const userID = useDatabaseContext();
@@ -40,15 +41,28 @@ function Kalendar() {
   };
 
   function dateCellRender(value) {
+    // eslint-disable-next-line
+    const { type } = useProfileType();
     const listData = getListData(value);
+    // eslint-disable-next-line
+    const [isVisible, setIsVisible] = useState();
+    const onCalendarItemClick = () => {
+      if (type === 'profesor') {
+        // pokazi profesorov modal
+        setIsVisible(true);
+      }
+    }
     return (
-      <ul className="events">
-        {listData.map((item) => (
-          <li key={item.uid} onClick={() => console.log(item)}>
-            <Badge status={item.type} text={item.content} />
-          </li>
-        ))}
-      </ul>
+      <>
+        <ul className="events">
+          {listData.map((item) => (
+            <li key={item.uid} onClick={onCalendarItemClick}>
+              <Badge status={item.type} text={item.content} />
+            </li>
+          ))}
+        </ul>
+        <CommentModal isVisible={isVisible} onClose={() => setIsVisible(false)} />
+      </>
     );
   }
 

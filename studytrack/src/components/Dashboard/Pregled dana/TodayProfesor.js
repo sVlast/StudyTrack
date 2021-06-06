@@ -7,13 +7,14 @@ import FeedbackModal from "../Modal/FeedbackModal.js";
 import { useDatabaseContext } from "../../../contexts/DatabaseContext.js";
 import moment from "moment";
 import CommentModal from "../Modal/CommentModal.js";
+import { CommentOutlined } from '@ant-design/icons';
 
 function TodayProfesor() {
   const [todos, setTodos] = useState([]);
   const [time, setTime] = useState(
     moment().add(2, "days").format("DD/MM/YYYY")
   );
-  const [showFeedbackModal, setShowFeedbackModal] = useState(false);
+  const [showCommentModal, setShowCommentModal] = useState(false);
   const userID = useDatabaseContext();
 
   const taskRef = firebase.database().ref("Users/" + userID + "/Task");
@@ -48,10 +49,11 @@ function TodayProfesor() {
             dataSource={todos}
             renderItem={(item) => (
               <List.Item>
-                <Card title={item.title} extra={<CommentModal />}>
+                <Card title={item.title} extra={<CommentOutlined onClick={() => setShowCommentModal(true)} />}>
                   <span>{item.type}</span>
                   <span>{`${item.htstart} - ${item.htend}`}</span>
                 </Card>
+                <CommentModal isVisible={showCommentModal} onClose={() => setShowCommentModal(false)} />
               </List.Item>
             )}
           />
