@@ -10,7 +10,8 @@ import moment from "moment";
 function Today() {
     const [todos, setTodos] = useState([]);
     const [time, setTime] = useState(
-        moment().add(2, "days").format("DD/MM/YYYY"))
+        moment().add(2, "days").format("DD/MM/YYYY")
+    );
     const [showFeedbackModal, setShowFeedbackModal] = useState(false);
     const userID = useDatabaseContext();
 
@@ -58,22 +59,29 @@ function Today() {
     const completeTodo = (id) => {
         let updatedTodos = todos.map((todo) => {
             if (todo.id === id) {
-
                 //todo.complete = !todo.complete;
                 taskRef.child(id).update({ complete: !todo.complete });
-                const task = taskRef.child(id).get().then((snapshot) => {
-                    if (snapshot.exists()) {
-                        const val = snapshot.val();
-                        return val;
-                    } else {
-                        console.log("No data available");
+                const task = taskRef
+                    .child(id)
+                    .get()
+                    .then((snapshot) => {
+                        if (snapshot.exists()) {
+                            const val = snapshot.val();
+
+                            return val;
+                        } else {
+                            console.log("No data available");
+                        }
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+
+                task.then((task) => {
+                    if (!todo.complete && task.wasPresent) {
+                        setShowFeedbackModal(true);
                     }
-                }).catch((error) => {
-                    console.error(error);
                 });
-                if (!todo.complete && task.wasPresent) {
-                    setShowFeedbackModal(true);
-                }
             }
             return todo;
         });
