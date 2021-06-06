@@ -7,7 +7,7 @@ import FeedbackModal from "../Modal/FeedbackModal.js";
 import { useDatabaseContext } from "../../../contexts/DatabaseContext.js";
 import moment from "moment";
 
-const data = [
+/* const data = [
     {
         title: "Dizajn digitalnih proizvoda",
         startTime: 9,
@@ -32,13 +32,12 @@ const data = [
         endTime: 19,
         type: "Predavanje",
     },
-];
+]; */
 
 function Today() {
     const [todos, setTodos] = useState([]);
     const [time, setTime] = useState(
-        moment().add(2, "days").format("DD/MM/YYYY")
-    );
+        moment().add(2, "days").format("DD/MM/YYYY"))
     const [showFeedbackModal, setShowFeedbackModal] = useState(false);
     const userID = useDatabaseContext();
 
@@ -115,12 +114,12 @@ function Today() {
                     <h2>Daily schedule</h2>
                     <List
                         grid={{ gutter: 16, column: 1 }}
-                        dataSource={data}
+                        dataSource={todos}
                         renderItem={(item) => (
                             <List.Item>
                                 <Card title={item.title}>
                                     <span>{item.type}</span>
-                                    <span>{`${item.startTime} - ${item.endTime}`}</span>
+                                    <span>{`${item.htstart} - ${item.htend}`}</span>
                                 </Card>
                             </List.Item>
                         )}

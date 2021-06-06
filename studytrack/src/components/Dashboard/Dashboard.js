@@ -17,12 +17,13 @@ import {
     OrderedListOutlined,
     UserOutlined,
 } from "@ant-design/icons";
+import moment from "moment";
 
 const { Content } = Layout;
 
 function Dashboard() {
     //icons must same length as topics check TopicMenu.js
-    const topics = ["today", "calendar", "todo", "profile"];
+    const topics = ["today", "calendar", "profile"];
     const icons = [
         <DashboardOutlined />,
         <CalendarOutlined />,
@@ -48,6 +49,9 @@ function Dashboard() {
     // return firebase auth user ID
     const userID = useDatabaseContext();
 
+    const [time, setTime] = useState(
+        moment().format("DD.MM.YYYY"))
+
     return (
         <div className="App">
             <Layout className="layout">
@@ -59,7 +63,7 @@ function Dashboard() {
                         path="/dashboard/(today)?"
                         component={() => (
                             <div className="today">
-                                <h1>Today's tasks</h1>
+                                <h1>Today is: {time}</h1>
                                 <Today />
                                 {/* <Converter /> */}
                             </div>
@@ -83,7 +87,7 @@ function Dashboard() {
                             </div>
                         )}
                     />
-                    <Route
+                    {/* <Route
                         path="/dashboard/todo"
                         component={() => (
                             <div className="todo-dash">
@@ -91,7 +95,7 @@ function Dashboard() {
                                 <TodoList />
                             </div>
                         )}
-                    />
+                    /> */}
                 </Content>
             </Layout>
         </div>
