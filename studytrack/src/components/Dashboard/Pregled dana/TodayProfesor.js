@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import firebase from "../../../util/firebase.js";
 import { List, Card } from "antd";
-import "./Today.css";
+import "./TodayProfesor.css";
 import Todo from "../To do lista/Todo";
 import FeedbackModal from "../Modal/FeedbackModal.js";
 import { useDatabaseContext } from "../../../contexts/DatabaseContext.js";
@@ -48,7 +48,7 @@ function TodayProfesor() {
             dataSource={todos}
             renderItem={(item) => (
               <List.Item>
-                <Card title={item.title} extra={<CommentModal/>}>
+                <Card title={item.title} extra={<CommentModal />}>
                   <span>{item.type}</span>
                   <span>{`${item.htstart} - ${item.htend}`}</span>
                 </Card>

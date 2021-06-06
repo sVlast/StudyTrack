@@ -7,33 +7,6 @@ import FeedbackModal from "../Modal/FeedbackModal.js";
 import { useDatabaseContext } from "../../../contexts/DatabaseContext.js";
 import moment from "moment";
 
-/* const data = [
-    {
-        title: "Dizajn digitalnih proizvoda",
-        startTime: 9,
-        endTime: 10,
-        type: "Predavanje",
-    },
-    {
-        title: "Digitalna fotografija",
-        startTime: 14,
-        endTime: 15,
-        type: "Laboratorijske vježbe",
-    },
-    {
-        title: "Digitalna slika",
-        startTime: 16,
-        endTime: 17,
-        type: "Laboratorijske vježbe",
-    },
-    {
-        title: "XML programiranje",
-        startTime: 18,
-        endTime: 19,
-        type: "Predavanje",
-    },
-]; */
-
 function Today() {
     const [todos, setTodos] = useState([]);
     const [time, setTime] = useState(

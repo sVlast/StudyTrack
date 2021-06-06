@@ -1,0 +1,36 @@
+.today-parent {
+    display: flex;
+    justify-content: center;
+}
+.raspored {
+    width: 50%;
+}
+
+.today-parent h2 {
+    font-weight: 300;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.card-left {
+    text-align: left;
+    width: min-content;
+}
+.card-right {
+    text-align: right;
+    width: min-content;
+}
+.today .ant-card-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.today .ant-card-body::before,
+.today .ant-card-body::after {
+    content: none;
+}
+
+.anticon-comment {
+    font-size: 20px;
+    color: #1890ff;
+}

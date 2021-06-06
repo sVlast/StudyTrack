@@ -29,7 +29,7 @@ function Dashboard() {
   const icons = [
     <DashboardOutlined />,
     <CalendarOutlined />,
-    <OrderedListOutlined />,
+    // <OrderedListOutlined />,
     <UserOutlined />,
   ];
   const history = useHistory();
@@ -60,8 +60,8 @@ function Dashboard() {
       console.log("tip: ", profType)
   }) */
 
-  let type="student";
-  
+  let type = "profesor";
+
   return (
     <div className="App">
       <Layout className="layout">
@@ -74,7 +74,7 @@ function Dashboard() {
             component={() => (
               <div className="today">
                 <h1>Today is: {time}</h1>
-                {type === "profesor" ? <TodayProfesor/>:<Today/>}
+                {type === "profesor" ? <TodayProfesor /> : <Today />}
                 {/* <Converter /> */}
               </div>
             )}
