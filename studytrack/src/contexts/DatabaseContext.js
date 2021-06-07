@@ -13,16 +13,16 @@ export const useProfileType = () => {
     const typeRef = firebase.database().ref(`Users/${userID}/type`);
 
     useEffect(() => {
-        typeRef.on('value', (snapshot) => {
-            setType(snapshot.val())
+        typeRef.on("value", (snapshot) => {
+            setType(snapshot.val());
         });
     }, [typeRef]);
 
     return {
         type,
         isLoading: !type,
-    }
-}
+    };
+};
 export default function DatabaseProvider({ children }) {
     const [userID, setUserID] = useState(
         firebase.auth().currentUser ? firebase.auth().currentUser.uid : "empty"
@@ -32,14 +32,14 @@ export default function DatabaseProvider({ children }) {
         if (user) {
             setUserID(firebase.auth().currentUser.uid);
         } else {
-            console.log("DatabaseContext ", "User Signed out!");
+            //console.log("DatabaseContext ", "User Signed out!");
         }
     });
 
     //const userID = auth.currentUser ? auth.currentUser.uid : "empty";
     //const userID = firebase.auth().currentUser.uid;
 
-    console.log("databasecontext:", userID);
+    //console.log("databasecontext:", userID);
     //console.log(auth.currentUser);
 
     return (
