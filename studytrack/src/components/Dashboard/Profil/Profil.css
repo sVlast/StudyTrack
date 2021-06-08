@@ -2,3 +2,21 @@
 .pass-content {
     margin-left: 25px;
 }
+.profil-parent {
+    display: flex;
+}
+.profil-content {
+    width: 40%;
+}
+.profil-cards {
+    width: 60%;
+}
+.profil-cards .ant-card-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profil-cards .ant-card-body::before,
+.profil-cards .ant-card-body::after {
+    content: none;
+}

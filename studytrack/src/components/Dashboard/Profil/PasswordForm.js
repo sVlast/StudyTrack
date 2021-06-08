@@ -2,16 +2,16 @@ import React from 'react';
 import { Form, Input, Button } from 'antd';
 const layout = {
     labelCol: {
-        span: 5,
+        span: 16,
     },
     wrapperCol: {
-        span: 6,
+        span: 16,
     },
 };
 const tailLayout = {
     wrapperCol: {
         offset: 0,
-        span: 6,
+        span: 16,
     },
 };
 
