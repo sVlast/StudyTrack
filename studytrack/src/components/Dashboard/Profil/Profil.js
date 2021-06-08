@@ -59,8 +59,15 @@ function Profil() {
                     renderItem={(item) => (
                         <List.Item>
                             <Card title={item.title}>
-                                <span>{item.type}</span>
-                                <span>{`${item.points} - ${item.overallPoints}`}</span>
+                                <span>
+                                    <span>{item.type}</span>
+                                    <span>{`${item.points} / ${item.overallPoints}`}</span>
+                                </span>
+                                <span>
+                                    <span>{item.type}</span>
+                                    <span>{`${item.points} / ${item.overallPoints}`}</span>
+                                </span>
+
                             </Card>
                         </List.Item>
                     )}

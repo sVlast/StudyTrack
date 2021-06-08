@@ -13,6 +13,10 @@
 }
 .profil-cards .ant-card-body {
     display: flex;
+    flex-direction: column;
+}
+.profil-cards .ant-card-body span {
+    display: flex;
     justify-content: space-between;
 }
 
