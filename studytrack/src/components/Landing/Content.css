@@ -1,11 +1,11 @@
 .bannerleft {
     width: 50%;
-    display: flex;
 }
-.bannerleft > img {
+.bannerleft img {
     display: block;
     max-width: 639px;
     width: auto;
+    margin: 0 auto;
 }
 .bannerright {
     width: 50%;
@@ -23,9 +23,10 @@
     width: 80%;
     user-select: none;
     height: 60vh;
+    transition: all 0.5s ease;
 }
 
-.bannerright > p {
+.bannerright p {
     font-family: "Roboto", sans-serif;
     font-size: 72px;
     font-weight: 300;
@@ -38,7 +39,7 @@
     margin-bottom: 50px;
 }
 
-.bannerright > button {
+.bannerright button {
     width: 200px;
     height: 50px;
     font-size: 20px;
@@ -69,4 +70,23 @@
     height: 50px;
     font-size: 20px;
     margin-top: 20px;
+}
+
+@media (max-width: 1200px) {
+    .bannerright {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .bannerleft {
+        width: 100%;
+    }
+    .bannerleft img {
+        width: 100%;
+    }
+    .banner {
+        flex-direction: column;
+        justify-content: center;
+        margin-top: -150px;
+        height: 100%;
+    }
 }
