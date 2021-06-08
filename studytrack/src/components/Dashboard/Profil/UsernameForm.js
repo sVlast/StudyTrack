@@ -2,16 +2,16 @@ import React from 'react';
 import { Form, Input, Button } from 'antd';
 const layout = {
     labelCol: {
-        span: 2,
+        span: 6,
     },
     wrapperCol: {
-        span: 5,
+        span: 6,
     },
 };
 const tailLayout = {
     wrapperCol: {
-        offset: 2,
-        span: 5,
+        offset: 0,
+        span: 6,
     },
 };
 
@@ -33,9 +33,11 @@ const UsernameForm = () => {
             }}
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}
+            layout="vertical"
+
         >
             <Form.Item
-                label="Username"
+                label="Username:"
                 name="username"
                 rules={[
                     {
@@ -48,7 +50,7 @@ const UsernameForm = () => {
             </Form.Item>
 
             <Form.Item
-                label="Nickname"
+                label="Nickname:"
                 name="nickname"
                 rules={[
                     {

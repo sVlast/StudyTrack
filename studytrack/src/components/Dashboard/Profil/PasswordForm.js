@@ -2,16 +2,16 @@ import React from 'react';
 import { Form, Input, Button } from 'antd';
 const layout = {
     labelCol: {
-        span: 2,
+        span: 5,
     },
     wrapperCol: {
-        span: 5,
+        span: 6,
     },
 };
 const tailLayout = {
     wrapperCol: {
-        offset: 2,
-        span: 5,
+        offset: 0,
+        span: 6,
     },
 };
 
@@ -28,6 +28,7 @@ const PasswordForm = () => {
         <Form
             {...layout}
             name="basic"
+            layout="vertical"
             initialValues={{
                 remember: true,
             }}
@@ -35,7 +36,7 @@ const PasswordForm = () => {
             onFinishFailed={onFinishFailed}
         >
             <Form.Item
-                label="Old Password"
+                label="Old Password:"
                 name="old password"
                 rules={[
                     {
@@ -48,7 +49,7 @@ const PasswordForm = () => {
             </Form.Item>
 
             <Form.Item
-                label="New Password"
+                label="New Password:"
                 name="new password"
                 rules={[
                     {
@@ -60,7 +61,7 @@ const PasswordForm = () => {
                 <Input defaultValue="Password" type="password" />
             </Form.Item>
             <Form.Item
-                label="Confirm Password"
+                label="Confirm Password:"
                 name="confirm password"
                 rules={[
                     {

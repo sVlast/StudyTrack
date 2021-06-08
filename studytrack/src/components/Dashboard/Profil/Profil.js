@@ -1,6 +1,7 @@
 import React from 'react';
 import PasswordForm from './PasswordForm.js';
 import UsernameForm from './UsernameForm.js';
+import './Profil.css';
 
 
 function Profil() {

@@ -3,8 +3,9 @@
     display: flex;
 }
 .bannerleft > img {
+    display: block;
     max-width: 639px;
-    width: 100%;
+    width: auto;
 }
 .bannerright {
     width: 50%;
