@@ -66,7 +66,7 @@ function TodayProfesor() {
                                     }
                                 >
                                     <span>{item.type}</span>
-                                    <span>{`${item.htstart} - ${item.htend}`}</span>
+                                    <span>{`${item.htstart.slice(0,-3)} - ${item.htend.slice(0,-3)}`}</span>
                                 </Card>
                                 <CommentModal
                                     isVisible={showCommentModal}

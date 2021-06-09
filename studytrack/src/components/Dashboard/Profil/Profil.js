@@ -1,44 +1,34 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import PasswordForm from './PasswordForm.js';
 import UsernameForm from './UsernameForm.js';
 import { List, Card } from "antd";
 import './Profil.css';
+import moment from 'moment';
+import { useDatabaseContext } from '../../../contexts/DatabaseContext.js';
+import firebase from "../../../util/firebase.js";
 
 
 function Profil() {
-    const data = [
-        {
-            title: "Naslov",
-            type: "Tip",
-            points: 6,
-            overallPoints: 8
-        }, {
-            title: "Naslov",
-            type: "Tip",
-            points: 6,
-            overallPoints: 8
-        }, {
-            title: "Naslov",
-            type: "Tip",
-            points: 6,
-            overallPoints: 8
-        }, {
-            title: "Naslov",
-            type: "Tip",
-            points: 6,
-            overallPoints: 8
-        }, {
-            title: "Naslov",
-            type: "Tip",
-            points: 6,
-            overallPoints: 8
-        }, {
-            title: "Naslov",
-            type: "Tip",
-            points: 6,
-            overallPoints: 8
-        }
-    ]
+    const [todos, setTodos] = useState([]);
+    const [time, setTime] = useState(moment().format("DD/MM/YYYY"));
+    const [taskID, setTaskID] = useState("");
+    const userID = useDatabaseContext();
+    const taskRef = firebase.database().ref("Users/" + userID + "/Task");
+
+    useEffect(() => {
+        taskRef.on("value", (snapshot) => {
+            const tasks = snapshot.val();
+            const taskList = [];
+            for (let id in tasks) {
+                taskList.unshift({ id, ...tasks[id] });
+            }
+            setTodos(taskList);
+            //console.log(tasks);
+            //console.log(taskList);
+        });
+        return () => taskRef.off();
+    }, []);
+    
     return (
         <div className="profil-parent">
             <div className="profil-content">
@@ -55,17 +45,17 @@ function Profil() {
                 <h2>Your points:</h2>
                 <List
                     grid={{ gutter: 16, column: 3 }}
-                    dataSource={data}
+                    dataSource={todos}
                     renderItem={(item) => (
                         <List.Item>
                             <Card title={item.title}>
                                 <span>
                                     <span>{item.type}</span>
-                                    <span>{`${item.points} / ${item.overallPoints}`}</span>
+                                    <span>3</span>
                                 </span>
                                 <span>
                                     <span>{item.type}</span>
-                                    <span>{`${item.points} / ${item.overallPoints}`}</span>
+                                    <span>4</span>
                                 </span>
 
                             </Card>
