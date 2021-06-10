@@ -29,7 +29,8 @@ const CommentModal = ({ isVisible, onClose, task }) => {
                             if (
                                 tasks[id].Task[t].dtstart == task.dtstart &&
                                 tasks[id].Task[t].htstart == task.htstart &&
-                                tasks[id].Task[t].title == task.title
+                                tasks[id].Task[t].title == task.title &&
+                                tasks[id].Task[t].comment != ""
                             ) {
                                 taskList.push(tasks[id].Task[t]);
                                 //console.log("OVO RADI!!!");
