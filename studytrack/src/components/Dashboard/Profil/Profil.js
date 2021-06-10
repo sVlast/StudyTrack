@@ -106,7 +106,7 @@ function Profil() {
                                     "Poslovni engleski jezik za IT"
                                 ].class += 1;
                             }
-                        } else if (tasks[id].type == "Laboratorijske vježbe") {
+                        } else if (tasks[id].type == "Auditorne vježbe") {
                             temp["Poslovni engleski jezik za IT"].labMax += 1;
                             if (
                                 tasks[id].wasPresent &&
@@ -137,7 +137,7 @@ function Profil() {
                             ) {
                                 temp["XML programiranje"].class += 1;
                             }
-                        } else if (tasks[id].type == "Laboratorijske vježbe") {
+                        } else if (tasks[id].type == "Auditorne vježbe") {
                             temp["XML programiranje"].labMax += 1;
                             if (
                                 tasks[id].wasPresent &&

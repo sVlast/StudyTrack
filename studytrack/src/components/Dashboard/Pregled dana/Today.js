@@ -58,7 +58,9 @@ function Today() {
     const completeTodo = (id) => {
         let updatedTodos = todos.map((todo) => {
             if (todo.id === id) {
-                //todo.complete = !todo.complete;
+                if (todo.complete || !todo.wasPresent) {
+                    return;
+                }
                 taskRef.child(id).update({ complete: !todo.complete });
                 const task = taskRef
                     .child(id)
@@ -99,7 +101,10 @@ function Today() {
                             <List.Item>
                                 <Card title={item.title}>
                                     <span>{item.type}</span>
-                                    <span>{`${item.htstart.slice(0,-3)} - ${item.htend.slice(0,-3)}`}</span>
+                                    <span>{`${item.htstart.slice(
+                                        0,
+                                        -3
+                                    )} - ${item.htend.slice(0, -3)}`}</span>
                                 </Card>
                             </List.Item>
                         )}
